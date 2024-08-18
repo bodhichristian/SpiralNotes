@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6C37842C724C9300335B42 /* StickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37832C724C9300335B42 /* StickyView.swift */; };
+		AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37852C724D4F00335B42 /* StickyContainerView.swift */; };
 		AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */; };
 		AAD6701D2C723D010030ECA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6701C2C723D010030ECA6 /* ContentView.swift */; };
 		AAD6701F2C723D030030ECA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD6701E2C723D030030ECA6 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA6C37832C724C9300335B42 /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
+		AA6C37852C724D4F00335B42 /* StickyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyContainerView.swift; sourceTree = "<group>"; };
 		AAD670172C723D010030ECA6 /* SpiralNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiralNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralNotesApp.swift; sourceTree = "<group>"; };
 		AAD6701C2C723D010030ECA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +42,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA6C37812C724C5600335B42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C37822C724C5F00335B42 /* Sticky */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA6C37822C724C5F00335B42 /* Sticky */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C37832C724C9300335B42 /* StickyView.swift */,
+				AA6C37852C724D4F00335B42 /* StickyContainerView.swift */,
+			);
+			path = Sticky;
+			sourceTree = "<group>";
+		};
 		AAD6700E2C723D010030ECA6 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +81,7 @@
 				AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */,
 				AAD6701C2C723D010030ECA6 /* ContentView.swift */,
 				AAD670282C7242720030ECA6 /* Model */,
+				AA6C37812C724C5600335B42 /* Views */,
 				AAD6701E2C723D030030ECA6 /* Assets.xcassets */,
 				AAD670202C723D030030ECA6 /* Preview Content */,
 			);
@@ -158,7 +180,9 @@
 				AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */,
 				AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */,
 				AAD6702C2C7244160030ECA6 /* Notebook.swift in Sources */,
+				AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */,
 				AAD6702A2C7242A00030ECA6 /* Sticky.swift in Sources */,
+				AA6C37842C724C9300335B42 /* StickyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +331,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.christianlavelle.SpiralNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -336,9 +364,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.christianlavelle.SpiralNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
