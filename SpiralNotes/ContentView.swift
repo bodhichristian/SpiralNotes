@@ -12,11 +12,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-               StickyContainerView()
+            ZStack(alignment: .bottomTrailing) {
+                VStack {
+                    VStack {
+                        StickyContainerView()
+                    }
+                    .navigationTitle("SpiralNotes")
+                    .frame(maxHeight: 250, alignment: .top)
+                    
+                    NotesListView()
+                        .padding(.top, -20)
+                }
+            AddButton()
             }
-            .navigationTitle("SpiralNotes")
-            .frame(maxHeight: .infinity, alignment: .top)
         }
     }
 }

@@ -14,9 +14,9 @@ struct StickyContainerView: View {
                 ForEach(0..<10) { _ in
                     HStack {
                         StickyView()
-                        Rectangle()
-                            .frame(width: 1, height: 100)
-                            .foregroundStyle(.secondary)
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 3, height: 66)
+                            
                     }
                 }
             }

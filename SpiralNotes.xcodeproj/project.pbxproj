@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA6C37842C724C9300335B42 /* StickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37832C724C9300335B42 /* StickyView.swift */; };
 		AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37852C724D4F00335B42 /* StickyContainerView.swift */; };
+		AA6C37892C72556600335B42 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37882C72556600335B42 /* NotesListView.swift */; };
+		AA6C378C2C725DE700335B42 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378B2C725DE700335B42 /* AddButton.swift */; };
 		AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */; };
 		AAD6701D2C723D010030ECA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6701C2C723D010030ECA6 /* ContentView.swift */; };
 		AAD6701F2C723D030030ECA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD6701E2C723D030030ECA6 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		AA6C37832C724C9300335B42 /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
 		AA6C37852C724D4F00335B42 /* StickyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyContainerView.swift; sourceTree = "<group>"; };
+		AA6C37882C72556600335B42 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
+		AA6C378B2C725DE700335B42 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		AAD670172C723D010030ECA6 /* SpiralNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiralNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralNotesApp.swift; sourceTree = "<group>"; };
 		AAD6701C2C723D010030ECA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		AA6C37812C724C5600335B42 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AA6C378A2C725DC100335B42 /* Components */,
+				AA6C37872C72555100335B42 /* Note */,
 				AA6C37822C724C5F00335B42 /* Sticky */,
 			);
 			path = Views;
@@ -57,6 +63,22 @@
 				AA6C37852C724D4F00335B42 /* StickyContainerView.swift */,
 			);
 			path = Sticky;
+			sourceTree = "<group>";
+		};
+		AA6C37872C72555100335B42 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C37882C72556600335B42 /* NotesListView.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		AA6C378A2C725DC100335B42 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C378B2C725DE700335B42 /* AddButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		AAD6700E2C723D010030ECA6 = {
@@ -179,10 +201,12 @@
 				AAD6701D2C723D010030ECA6 /* ContentView.swift in Sources */,
 				AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */,
 				AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */,
+				AA6C378C2C725DE700335B42 /* AddButton.swift in Sources */,
 				AAD6702C2C7244160030ECA6 /* Notebook.swift in Sources */,
 				AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */,
 				AAD6702A2C7242A00030ECA6 /* Sticky.swift in Sources */,
 				AA6C37842C724C9300335B42 /* StickyView.swift in Sources */,
+				AA6C37892C72556600335B42 /* NotesListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
