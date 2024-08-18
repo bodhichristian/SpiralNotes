@@ -25,7 +25,7 @@ struct ContentView: View {
                     .navigationTitle("SpiralNotes")
                     .frame(maxHeight: 270, alignment: .top)
                     
-                    NotesListView()
+                    NoteContainerView()
                         .padding(.top, -20)
                 }
             AddButton()

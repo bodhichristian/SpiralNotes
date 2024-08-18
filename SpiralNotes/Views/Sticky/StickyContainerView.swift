@@ -17,16 +17,20 @@ struct StickyContainerView: View {
                     } label: {
                         HStack {
                             StickyView()
-                                .frame(width: 240, height: 240)
+                                .frame(width: 200, height: 200)
+                                .padding(6)
                             
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 3, height: 66)
+                                .padding(.horizontal, 8)
                         }
+                        .padding(.vertical)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
             }
         }
+        .padding(.leading)
     }
 }
 

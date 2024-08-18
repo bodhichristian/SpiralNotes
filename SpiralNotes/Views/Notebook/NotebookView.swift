@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct NotebookView: View {
+    let notebook: Notebook
+    
     var body: some View {
         ZStack {
             // Base
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(.yellow.gradient)
+                .foregroundStyle(Color(colorName: notebook.color)!.gradient)
                 .frame(maxWidth: .infinity)
                 .frame(height: 400)
                 .padding(20)
@@ -30,7 +32,7 @@ struct NotebookView: View {
                     .font(.caption2)
                     .fontWeight(.black)
                 
-                Text("Social Studies")
+                Text(notebook.subject)
                     .font(.system(size: 48))
                     .fontWeight(.thin)
             }
@@ -70,5 +72,5 @@ struct NotebookView: View {
 }
 
 #Preview {
-    NotebookView()
+    NotebookView(notebook: Notebook.mockData.randomElement()!)
 }

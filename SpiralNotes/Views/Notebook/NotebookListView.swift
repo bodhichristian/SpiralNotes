@@ -12,11 +12,11 @@ struct NotebookListView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 0) {
-                    ForEach(0..<7) { _ in
+                    ForEach(Notebook.mockData) { notebook in
                         NavigationLink {
                             Text("Notebook detail")
                         } label: {
-                            NotebookView()
+                            NotebookView(notebook: notebook)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }

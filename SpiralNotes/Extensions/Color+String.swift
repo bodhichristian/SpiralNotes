@@ -1,0 +1,44 @@
+//
+//  Color+String.swift
+//  SpiralNotes
+//
+//  Created by christian on 8/18/24.
+//
+
+import Foundation
+import SwiftUI
+
+extension Color {
+    init?(colorName: String) {
+        let color = colorName.lowercased()
+        
+        switch color {
+        case "red":
+            self = .red
+        case "orange":
+            self = .orange
+        case "yellow":
+            self = .yellow
+        case "green":
+            self = .green
+        case "indigo":
+            self = .indigo
+        case "purple":
+            self = .purple
+        case "cyan":
+            self = .cyan
+        case "mint":
+            self = .mint
+        case "teal":
+            self = .teal
+        case "brown":
+            self = .brown
+        case "gray":
+            self = .gray
+        default:
+            self = .blue
+        }
+    }
+}
+
+

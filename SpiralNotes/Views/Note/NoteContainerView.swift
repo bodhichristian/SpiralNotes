@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NotesListView: View {
+struct NoteContainerView: View {
     var body: some View {
         List {
             Section {
@@ -15,7 +15,7 @@ struct NotesListView: View {
                     NotebookListView()
                 } label: {
                     HStack {
-                        Image(systemName: "books.vertical")
+                        Image(systemName: "books.vertical.fill")
                             .foregroundStyle(.orange.gradient)
                             .fontWeight(.bold)
                         Text("All Notebooks")
@@ -24,15 +24,15 @@ struct NotesListView: View {
             }
             
             Section("Recent Notebooks") {
-                ForEach(0..<4) { _ in
+                ForEach(Notebook.mockData) { notebook in
                     NavigationLink {
-                        Text("Text")
+                        Text(notebook.subject)
                     } label: {
                         HStack {
-                            Image(systemName: "text.book.closed")
-                                .foregroundStyle(.orange.gradient)
+                            Image(systemName: "text.book.closed.fill")
+                                .foregroundStyle(Color(colorName: notebook.color)!.gradient)
                                 .fontWeight(.bold)
-                            Text("Subject")
+                            Text(notebook.subject)
                         }
                     }
                 }
@@ -53,10 +53,9 @@ struct NotesListView: View {
                 }
             }
         }
-        
     }
 }
 
 #Preview {
-    NotesListView()
+    NoteContainerView()
 }

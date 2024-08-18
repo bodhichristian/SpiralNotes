@@ -38,7 +38,6 @@ struct StickyView: View {
                 )
                 .padding()
             }
-            .padding()
     }
 }
 
