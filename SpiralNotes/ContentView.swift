@@ -11,13 +11,21 @@ struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack(alignment: .bottomTrailing) {
+                VStack {
+                    VStack {
+                        StickyContainerView()
+                    }
+                    .navigationTitle("SpiralNotes")
+                    .frame(maxHeight: 250, alignment: .top)
+                    
+                    NotesListView()
+                        .padding(.top, -20)
+                }
+            AddButton()
+            }
         }
-        .padding()
     }
 }
 
