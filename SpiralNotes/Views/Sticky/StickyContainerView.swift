@@ -12,16 +12,20 @@ struct StickyContainerView: View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(0..<6) { _ in
-                    HStack {
+                    NavigationLink {
                         StickyView()
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 3, height: 66)
-                            
+                    } label: {
+                        HStack {
+                            StickyView()
+                                .frame(width: 240, height: 240)
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(width: 3, height: 66)
+                        }
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
-        
     }
 }
 

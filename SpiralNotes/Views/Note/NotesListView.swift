@@ -10,9 +10,21 @@ import SwiftUI
 struct NotesListView: View {
     var body: some View {
         List {
-            Section("Notebooks") {
-                ForEach(0..<5) { _ in
-                    
+            Section {
+                NavigationLink {
+                    NotebookListView()
+                } label: {
+                    HStack {
+                        Image(systemName: "books.vertical")
+                            .foregroundStyle(.orange.gradient)
+                            .fontWeight(.bold)
+                        Text("All Notebooks")
+                    }
+                }
+            }
+            
+            Section("Recent Notebooks") {
+                ForEach(0..<4) { _ in
                     NavigationLink {
                         Text("Text")
                     } label: {
@@ -30,8 +42,7 @@ struct NotesListView: View {
                 ForEach(0..<5) { _ in
                     NavigationLink {
                         Text("Hi")
-                    }
-                label:{
+                    } label: {
                         HStack {
                             Image(systemName: "note.text")
                                 .foregroundStyle(.purple.gradient)
@@ -41,8 +52,8 @@ struct NotesListView: View {
                     }
                 }
             }
-            
         }
+        
     }
 }
 

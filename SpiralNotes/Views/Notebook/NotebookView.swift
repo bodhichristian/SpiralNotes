@@ -34,6 +34,7 @@ struct NotebookView: View {
                     .font(.system(size: 48))
                     .fontWeight(.thin)
             }
+            .foregroundStyle(.black)
             
             // Spirals
             VStack {

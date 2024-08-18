@@ -20,6 +20,7 @@ struct AddButton: View {
                     Image(systemName: "plus")
                         .font(.title)
                         .fontWeight(.medium)
+                        .foregroundStyle(.white)
                         .padding(40)
                 }
         }
