@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct AddButton: View {
+struct GradientButton: View {
+    let iconName: String
     var body: some View {
         Button {
             
@@ -17,7 +18,7 @@ struct AddButton: View {
                 .frame(width: 70)
                 .padding(20)
                 .overlay {
-                    Image(systemName: "plus")
+                    Image(systemName: iconName)
                         .font(.title)
                         .fontWeight(.medium)
                         .foregroundStyle(.white)
@@ -29,5 +30,5 @@ struct AddButton: View {
 }
 
 #Preview {
-    AddButton()
+    GradientButton(iconName: "plus")
 }

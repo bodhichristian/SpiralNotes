@@ -25,8 +25,8 @@ struct ContentView: View {
                             endPoint: .bottom
                         )
                     )
-                .ignoresSafeArea()
-                    
+                    .ignoresSafeArea()
+                
                 VStack {
                     VStack {
                         StickyContainerView()
@@ -37,7 +37,17 @@ struct ContentView: View {
                     NoteContainerView()
                         .padding(.top, -20)
                 }
-            AddButton()
+                GradientButton(iconName: "plus")
+            }
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        // Open SettingsView
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
             }
         }
     }

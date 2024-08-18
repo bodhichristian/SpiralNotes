@@ -39,14 +39,14 @@ struct NoteContainerView: View {
             }
             
             Section("Loose notes") {
-                ForEach(0..<5) { _ in
+                ForEach(Note.mockData) { note in
                     NavigationLink {
-                        Text("Hi")
+                        NoteView(note: note)
                     } label: {
                         HStack {
                             Image(systemName: "note.text")
                                 .foregroundStyle(.purple.gradient)
-                            Text("Random note")
+                            Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
                             Spacer()
                         }
                     }

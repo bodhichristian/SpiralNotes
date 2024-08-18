@@ -23,6 +23,16 @@ struct NotebookListView: View {
                 }
             }
             .navigationTitle("Notebooks")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                       // Add new notebook
+                    } label: {
+                        ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
         }
     }
 }

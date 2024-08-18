@@ -25,12 +25,13 @@ struct StickyContainerView: View {
                                 .padding(.horizontal, 8)
                         }
                         .padding(.vertical)
+                        .offset(x: 14)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
             }
         }
-        .padding(.leading)
+        //.padding(.leading)
     }
 }
 
