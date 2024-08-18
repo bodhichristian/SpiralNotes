@@ -124,9 +124,9 @@
 		AAD670192C723D010030ECA6 /* SpiralNotes */ = {
 			isa = PBXGroup;
 			children = (
-				AAC1B3C52C7291910002F230 /* Extensions */,
 				AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */,
 				AAD6701C2C723D010030ECA6 /* ContentView.swift */,
+				AAC1B3C52C7291910002F230 /* Extensions */,
 				AAD670282C7242720030ECA6 /* Model */,
 				AA6C37812C724C5600335B42 /* Views */,
 				AAD6701E2C723D030030ECA6 /* Assets.xcassets */,
