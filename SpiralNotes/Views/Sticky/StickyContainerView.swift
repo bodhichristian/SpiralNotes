@@ -11,7 +11,7 @@ struct StickyContainerView: View {
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(0..<10) { _ in
+                ForEach(0..<6) { _ in
                     HStack {
                         StickyView()
                         RoundedRectangle(cornerRadius: 10)
