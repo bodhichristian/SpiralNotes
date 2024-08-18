@@ -18,6 +18,7 @@ struct StickyContainerView: View {
                         HStack {
                             StickyView()
                                 .frame(width: 240, height: 240)
+                            
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 3, height: 66)
                         }
