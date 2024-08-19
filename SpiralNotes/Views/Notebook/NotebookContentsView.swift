@@ -43,11 +43,21 @@ struct NotebookContentsView: View {
             
         }
         .navigationTitle(notebook.subject)
+        .toolbar {
+            ToolbarItem {
+                Button {
+                   // Add new notebook
+                } label: {
+                    ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+        }
     }
 }
 
 #Preview {
     NavigationStack{
-        NotebookContentsView(notebook: Notebook.mockData[0])
+        NotebookContentsView(notebook: Notebook.mockData[1])
     }
 }
