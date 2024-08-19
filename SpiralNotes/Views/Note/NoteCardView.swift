@@ -44,15 +44,17 @@ struct NoteCardView: View {
                 Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
                     .font(.title2)
                     .fontWeight(.bold)
-                    .shadow(radius: colorScheme == .light ? 1 : 0)
+                    .foregroundStyle(.white)
+                    .shadow(radius: 1)
                 
                 
                 Spacer()
                 
                 Image(systemName: "ellipsis.circle")
             }
-            .foregroundStyle(textColor)
-            .padding()
+            //.foregroundStyle(textColor)
+            .padding(.horizontal)
+            .padding(.vertical, 12)
             .background {
                 UnevenRoundedRectangle(
                     cornerRadii: RectangleCornerRadii(
@@ -65,8 +67,6 @@ struct NoteCardView: View {
                 )
                 .foregroundStyle(Color(colorName: notebook.color)!.gradient)
             }
-            
-            
             
             Text(note.content ?? "")
                 .padding()
@@ -81,14 +81,12 @@ struct NoteCardView: View {
                         ),
                         style: .continuous
                     )
-                    .foregroundStyle(Color.black.gradient)
+                    .foregroundStyle(colorScheme == .dark ? Color.black.gradient : Color.white.gradient)
                 }
             
             
         }
-        .padding()
         .frame(maxWidth: .infinity, maxHeight: 200, alignment: .topLeading)
-        
     }
 }
 

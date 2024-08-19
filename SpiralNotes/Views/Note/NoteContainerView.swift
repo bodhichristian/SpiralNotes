@@ -26,7 +26,7 @@ struct NoteContainerView: View {
             Section("Recent Notebooks") {
                 ForEach(Notebook.mockData) { notebook in
                     NavigationLink {
-                        Text(notebook.subject)
+                        NotebookContentsView(notebook: notebook)
                     } label: {
                         HStack {
                             Image(systemName: "text.book.closed.fill")

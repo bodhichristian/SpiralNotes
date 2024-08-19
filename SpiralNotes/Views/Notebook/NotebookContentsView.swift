@@ -12,11 +12,17 @@ struct NotebookContentsView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 0) {
+            LazyVStack(spacing: 10) {
                 ForEach(notebook.notes ?? [Note]()){ note in
-                    NoteCardView(note: note, notebook: notebook)
+                    NavigationLink {
+                        NoteView(note: note)
+                    }label:{
+                        NoteCardView(note: note, notebook: notebook)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
+            .padding()
         }
         .background {
             
@@ -25,6 +31,8 @@ struct NotebookContentsView: View {
                     LinearGradient(
                         colors: [
                             Color(colorName: notebook.color)!.opacity(0.1),
+                            Color(colorName: notebook.color)!.opacity(0.1),
+                            Color(colorName: notebook.color)!.opacity(0.4),
                             Color(colorName: notebook.color)!.opacity(1.0)
                         ],
                         startPoint: .top,
