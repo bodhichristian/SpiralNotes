@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteCardView: View {
     @Environment(\.colorScheme) var colorScheme
-
+    
     let note: Note
     let notebook: Notebook
     
@@ -38,7 +38,8 @@ struct NoteCardView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
+            // Header
             HStack {
                 Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
                     .font(.title2)
@@ -64,13 +65,30 @@ struct NoteCardView: View {
                 )
                 .foregroundStyle(Color(colorName: notebook.color)!.gradient)
             }
-
+            
+            
+            
             Text(note.content ?? "")
-                .padding(8)
+                .padding()
+                .frame(maxWidth: .infinity, minHeight: 120, alignment: .leading)
+                .background {
+                    UnevenRoundedRectangle(
+                        cornerRadii: RectangleCornerRadii(
+                            topLeading: 0,
+                            bottomLeading: 10,
+                            bottomTrailing: 10,
+                            topTrailing: 0
+                        ),
+                        style: .continuous
+                    )
+                    .foregroundStyle(Color.black.gradient)
+                }
+            
+            
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: 200, alignment: .topLeading)
- 
+        
     }
 }
 

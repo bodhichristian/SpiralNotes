@@ -12,7 +12,7 @@ struct NotebookContentsView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack(spacing: 0) {
                 ForEach(notebook.notes ?? [Note]()){ note in
                     NoteCardView(note: note, notebook: notebook)
                 }
