@@ -31,7 +31,6 @@ struct StickyContainerView: View {
                 }
             }
         }
-        //.padding(.leading)
     }
 }
 

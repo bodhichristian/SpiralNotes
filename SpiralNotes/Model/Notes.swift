@@ -14,14 +14,14 @@ final class Note {
     var dateCreated: Date
     var title: String?
     var content: String?
-    @Relationship var notebook: [Notebook]?
+    @Relationship var notebook: Notebook?
     
     init(
         id: UUID = UUID(),
         dateCreated: Date = .now,
         title: String? = nil,
         content: String? = nil,
-        notebook: [Notebook]? = nil
+        notebook: Notebook? = nil
     ) {
         self.id = id
         self.dateCreated = dateCreated
