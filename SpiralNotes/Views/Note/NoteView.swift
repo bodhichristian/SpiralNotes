@@ -18,8 +18,8 @@ struct NoteView: View {
                 colors: [
                     Color(colorName: notebook.color)!.opacity(0.1),
                     Color(colorName: notebook.color)!.opacity(0.1),
-                    Color(colorName: notebook.color)!.opacity(0.4),
-                    Color(colorName: notebook.color)!.opacity(0.8)
+                    Color(colorName: notebook.color)!.opacity(0.2),
+                    Color(colorName: notebook.color)!.opacity(0.3)
                 ],
                 startPoint: .top,
                 endPoint: .bottom
@@ -63,6 +63,6 @@ struct NoteView: View {
 
 #Preview {
     NavigationStack {
-        NoteView(note: Note.mockData[0], notebook: Notebook.mockData.randomElement()!)
+        NoteView(note: Note.mockData[0], notebook: Notebook.mockData[3])
     }
 }
