@@ -59,21 +59,23 @@ struct NoteCardView: View {
                         Spacer()
                         
                         Image(systemName: "ellipsis.circle")
+                            .foregroundStyle(.white)
                     }
                     //.foregroundStyle(textColor)
                     .padding(.horizontal)
                     .padding(.vertical, 12)
                     .background {
-                        UnevenRoundedRectangle(
-                            cornerRadii: RectangleCornerRadii(
-                                topLeading: 10,
-                                bottomLeading: 0,
-                                bottomTrailing: 0,
-                                topTrailing: 10
-                            ),
-                            style: .continuous
-                        )
-                        .foregroundStyle(Color(colorName: notebook.color)!.gradient)
+                            UnevenRoundedRectangle(
+                                cornerRadii: RectangleCornerRadii(
+                                    topLeading: 10,
+                                    bottomLeading: 0,
+                                    bottomTrailing: 0,
+                                    topTrailing: 10
+                                ),
+                                style: .continuous
+                            )
+                            
+                            .foregroundStyle(Color(colorName: notebook.color)!.gradient)
                     }
                    
                     
@@ -111,4 +113,5 @@ struct NoteCardView: View {
         NoteCardView(note: Note.mockData[1], notebook: Notebook.mockData[1])
         NoteCardView(note: Note.mockData[3], notebook: Notebook.mockData[2])
     }
+    .padding()
 }

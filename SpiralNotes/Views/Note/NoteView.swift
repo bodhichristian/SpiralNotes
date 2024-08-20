@@ -35,8 +35,8 @@ struct NoteView: View {
                             maxHeight: .infinity,
                             alignment: .topLeading
                         )
-                        .padding()
                 }
+                .padding()
             }
             
             Button {
@@ -57,7 +57,6 @@ struct NoteView: View {
             .buttonStyle(PlainButtonStyle())
         }
         .navigationTitle(note.title ?? "")
-        
     }
 }
 
