@@ -15,7 +15,7 @@ struct NoteListView: View {
             LazyVStack(spacing: 10) {
                 ForEach(notebook.notes ?? [Note]()){ note in
                     NavigationLink {
-                        NoteView(note: note)
+                        NoteView(note: note, notebook: notebook)
                     }label:{
                         NoteCardView(note: note, notebook: notebook)
                     }
@@ -46,16 +46,16 @@ struct NoteListView: View {
         .toolbar {
             ToolbarItem {
                 Button {
-                   // Sort notes
+                    // Add new note in current notebook
                 } label: {
-                    Image(systemName: "arrow.up.arrow.down")
-                        .fontWeight(.semibold)
+                    SortButtonLabel()
                 }
                 .buttonStyle(PlainButtonStyle())
             }
+            
             ToolbarItem {
                 Button {
-                   // Add new note in current notebook
+                    // Add new note in current notebook
                 } label: {
                     ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
                 }

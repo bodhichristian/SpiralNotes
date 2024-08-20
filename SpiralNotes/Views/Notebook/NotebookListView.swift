@@ -26,6 +26,14 @@ struct NotebookListView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
+                        // sort notebooks
+                    } label: {
+                        SortButtonLabel()
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+                ToolbarItem {
+                    Button {
                        // Add new notebook
                     } label: {
                         ToolbarButtonLabel(text: "Add", symbol: "plus.circle")

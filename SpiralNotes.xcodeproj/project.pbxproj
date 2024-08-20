@@ -25,6 +25,7 @@
 		AAD6702A2C7242A00030ECA6 /* Sticky.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD670292C7242A00030ECA6 /* Sticky.swift */; };
 		AAD6702C2C7244160030ECA6 /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6702B2C7244160030ECA6 /* Notebook.swift */; };
 		AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6702D2C7244690030ECA6 /* Notes.swift */; };
+		AAF83FB42C741B5200BFB970 /* SortButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		AAD670292C7242A00030ECA6 /* Sticky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticky.swift; sourceTree = "<group>"; };
 		AAD6702B2C7244160030ECA6 /* Notebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
 		AAD6702D2C7244690030ECA6 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortButtonLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				AA6C378B2C725DE700335B42 /* GradientButton.swift */,
+				AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */,
 				AAC1B3CC2C72A8BA0002F230 /* ToolbarButtonLabel.swift */,
 			);
 			path = Components;
@@ -251,6 +254,7 @@
 				AAC1B3CB2C729ECB0002F230 /* NoteView.swift in Sources */,
 				AA6C37842C724C9300335B42 /* StickyView.swift in Sources */,
 				AA6C37892C72556600335B42 /* NoteStack.swift in Sources */,
+				AAF83FB42C741B5200BFB970 /* SortButtonLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
