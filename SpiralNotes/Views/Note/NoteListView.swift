@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NotebookContentsView: View {
+struct NoteListView: View {
     let notebook: Notebook
     
     var body: some View {
@@ -33,7 +33,7 @@ struct NotebookContentsView: View {
                             Color(colorName: notebook.color)!.opacity(0.1),
                             Color(colorName: notebook.color)!.opacity(0.1),
                             Color(colorName: notebook.color)!.opacity(0.4),
-                            Color(colorName: notebook.color)!.opacity(1.0)
+                            Color(colorName: notebook.color)!.opacity(0.8)
                         ],
                         startPoint: .top,
                         endPoint: .bottom
@@ -46,7 +46,16 @@ struct NotebookContentsView: View {
         .toolbar {
             ToolbarItem {
                 Button {
-                   // Add new notebook
+                   // Sort notes
+                } label: {
+                    Image(systemName: "arrow.up.arrow.down")
+                        .fontWeight(.semibold)
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+            ToolbarItem {
+                Button {
+                   // Add new note in current notebook
                 } label: {
                     ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
                 }
@@ -58,6 +67,6 @@ struct NotebookContentsView: View {
 
 #Preview {
     NavigationStack{
-        NotebookContentsView(notebook: Notebook.mockData[1])
+        NoteListView(notebook: Notebook.mockData[1])
     }
 }

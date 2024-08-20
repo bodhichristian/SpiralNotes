@@ -34,7 +34,7 @@ struct ContentView: View {
                     .navigationTitle("SpiralNotes")
                     .frame(maxHeight: 270, alignment: .top)
                     
-                    NoteContainerView()
+                    NoteStack()
                         .padding(.top, -20)
                 }
                 GradientButton(iconName: "plus")

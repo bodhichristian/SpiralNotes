@@ -14,7 +14,7 @@ struct NotebookListView: View {
                 LazyVStack(spacing: 0) {
                     ForEach(Notebook.mockData) { notebook in
                         NavigationLink {
-                            NotebookContentsView(notebook: notebook)
+                            NoteListView(notebook: notebook)
                         } label: {
                             NotebookView(notebook: notebook)
                         }

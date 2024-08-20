@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoteContainerView: View {
+struct NoteStack: View {
     var body: some View {
         List {
             Section {
@@ -26,7 +26,7 @@ struct NoteContainerView: View {
             Section("Recent Notebooks") {
                 ForEach(Notebook.mockData) { notebook in
                     NavigationLink {
-                        NotebookContentsView(notebook: notebook)
+                        NoteListView(notebook: notebook)
                     } label: {
                         HStack {
                             Image(systemName: "text.book.closed.fill")
@@ -57,5 +57,5 @@ struct NoteContainerView: View {
 }
 
 #Preview {
-    NoteContainerView()
+    NoteStack()
 }
