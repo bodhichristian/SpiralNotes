@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
@@ -55,5 +56,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .modelContainer(try! ModelContainer(for: Note.self))
 }
 
