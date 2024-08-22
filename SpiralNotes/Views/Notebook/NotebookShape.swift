@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct NotebookShape: View {
-    let notebook: Notebook
+    let colorName: String
     
     var body: some View {
         ZStack {
             // Base
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(Color(colorName: notebook.color)!.gradient)
+                .foregroundStyle(Color(colorName: colorName)!.gradient)
                 .frame(maxWidth: .infinity)
                 .frame(height: 400)
                 .padding(20)
@@ -58,11 +58,11 @@ struct NotebookShape: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 12)
+            .padding(.leading, 6)
         }
     }
 }
 
 #Preview {
-   NotebookShape(notebook: Notebook.mockData[0])
+    NotebookShape(colorName: "yellow")
 }

@@ -13,7 +13,7 @@ struct NotebookView: View {
     
     var body: some View {
         ZStack {
-            NotebookShape(notebook: notebook)
+            NotebookShape(colorName: notebook.color)
             NotebookSubjectView(subject: notebook.subject)
             
         }

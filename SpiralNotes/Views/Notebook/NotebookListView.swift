@@ -37,7 +37,7 @@ struct NotebookListView: View {
                 }
                 ToolbarItem {
                     Button {
-                       // Add new notebook
+                       isAddingNotebook = true
                     } label: {
                         ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
                     }
@@ -45,7 +45,7 @@ struct NotebookListView: View {
                 }
             }
             .sheet(isPresented: $isAddingNotebook) {
-                // AddNotebookView()
+                 AddNotebookView()
             }
         }
     }

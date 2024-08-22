@@ -10,6 +10,7 @@ import SwiftUI
 struct AddNotebookSubjectView: View {
     @Binding var subject: String
     @Environment(\.colorScheme) var colorScheme
+    @FocusState private var isEditingSubject: Bool
     
     var body: some View {
         VStack {
@@ -20,17 +21,22 @@ struct AddNotebookSubjectView: View {
             TextField("Subject", text: $subject)
                 .font(.system(size: 36))
                 .fontWeight(.thin)
-                .multilineTextAlignment(.center)
                 .frame(maxWidth: 300)
+                .scrollDismissesKeyboard(.interactively)
+                .multilineTextAlignment(.center)
+                .focused($isEditingSubject)
                 
         }
         .foregroundStyle(.black)
+        .onTapGesture {
+            isEditingSubject = true
+        }
     }
 }
 
 #Preview {
     ZStack {
-        NotebookShape(notebook: Notebook.mockData[2])
-        AddNotebookSubjectView(subject: .constant("Ceasaghfahfsdfhzbcmf"))
+        NotebookShape(colorName: "blue")
+        AddNotebookSubjectView(subject: .constant("History"))
     }
 }

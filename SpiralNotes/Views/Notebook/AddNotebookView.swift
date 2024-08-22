@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct AddNotebookView: View {
-    
-    @State private var newNoteBook: Notebook = Notebook(subject: "Subject")
-    
+    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.dismiss) var dismiss
+
+    @State private var subject: String = "Subject"
+    @State private var colorName: String = "blue"
+    @State private var newNoteBook: Notebook = Notebook(subject: "Subject", color: "blue")
+
     var body: some View {
         ZStack {
-            NotebookShape(notebook: newNoteBook)
-            AddNotebookSubjectView(subject: $newNoteBook.subject)
+            ZStack(alignment: .bottom) {
+                NotebookShape(colorName: colorName)
+                
+                HStack {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "trash.circle.fill")
+                    }
+                    
+                    ColorSelectionCapsule(colorName: $colorName)
+
+                    Button {
+                        // save notebook to swiftdata
+                    } label:{
+                        Image(systemName: "checkmark.circle.fill")
+                    }
+                }
+                .font(.largeTitle)
+                .foregroundStyle(Color.primaryNegative(for: colorScheme))
+                .padding(.bottom, 38)
+            }
+            AddNotebookSubjectView(subject: $subject)
+            
+            
         }
     }
 }
