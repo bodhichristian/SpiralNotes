@@ -12,6 +12,7 @@ struct NoteView: View {
     let note: Note
     let notebook: Notebook
     
+    @FocusState private var isEditingNote: Bool
     @State private var noteContent: String = ""
     
     var body: some View {
@@ -36,28 +37,41 @@ struct NoteView: View {
                             noteContent = note.content ?? ""
                         }
                         .textEditorStyle(.plain)
+                        .focused($isEditingNote)
                 }
                 .padding()
             }
             
             Button {
-                
+                withAnimation {
+                    isEditingNote.toggle()
+                }
             } label: {
                 Circle()
                     .foregroundStyle(.black)
                     .frame(width: 70)
                     .padding(20)
                     .overlay {
-                        Image(systemName: "pencil")
+                        Image(systemName: isEditingNote ? "checkmark" : "pencil")
                             .font(.title)
                             .fontWeight(.medium)
                             .foregroundStyle(.white)
                             .padding(40)
+                            
                     }
             }
             .buttonStyle(PlainButtonStyle())
         }
         .navigationTitle(note.title ?? "")
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "ellipsis.cirle")
+                }
+            }
+        }
     }
 }
 
