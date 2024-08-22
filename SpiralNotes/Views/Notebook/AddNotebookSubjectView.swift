@@ -16,14 +16,21 @@ struct AddNotebookSubjectView: View {
             Text("SUBJECT")
                 .font(.caption2)
                 .fontWeight(.black)
-            Text(subject)
-                .font(.system(size: 48))
+            
+            TextField("Subject", text: $subject)
+                .font(.system(size: 36))
                 .fontWeight(.thin)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 300)
+                
         }
         .foregroundStyle(.black)
     }
 }
 
 #Preview {
-    AddNotebookSubjectView(subject: .constant("French"))
+    ZStack {
+        NotebookShape(notebook: Notebook.mockData[2])
+        AddNotebookSubjectView(subject: .constant("Ceasaghfahfsdfhzbcmf"))
+    }
 }

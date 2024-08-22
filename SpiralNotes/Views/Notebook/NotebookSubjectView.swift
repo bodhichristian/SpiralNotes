@@ -17,7 +17,7 @@ struct NotebookSubjectView: View {
                 .fontWeight(.black)
             
             Text(subject)
-                .font(.system(size: 48))
+                .font(.system(size: 36))
                 .fontWeight(.thin)
         }
         .foregroundStyle(.black)

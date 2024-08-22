@@ -19,7 +19,7 @@ struct NotebookListView: View {
                         NavigationLink {
                             NoteListView(notebook: notebook)
                         } label: {
-                            NotebookShape(notebook: notebook)
+                            NotebookView(notebook: notebook)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
