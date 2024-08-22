@@ -68,8 +68,9 @@ struct NoteView: View {
                 Button {
                     
                 } label: {
-                    Image(systemName: "ellipsis.cirle")
+                    Image(systemName: "ellipsis.circle")
                 }
+                .buttonStyle(PlainButtonStyle())
             }
         }
     }

@@ -13,29 +13,51 @@ struct AddNotebookView: View {
 
     @State private var subject: String = "Subject"
     @State private var colorName: String = "purple"
+    @State private var didEditSubject: Bool = false
 
     var body: some View {
-        ZStack {
-            ZStack(alignment: .bottom) {
-                NotebookShape(colorName: colorName)
-
-                HStack(alignment: .bottom) {
-                    NotebookButton(symbolName: "trash.circle.fill") {
-                        dismiss()
-                    }
+        VStack(spacing: 20) {
+            if !didEditSubject {
+                Text("Select Subject to \(Text("rename").foregroundStyle(Color(colorName: colorName)!))")
+                    .font(.title3)
+                    .fontWeight(.medium)
                     
-                    ColorSelectionCapsule(colorName: $colorName)
-
-                    NotebookButton(symbolName: "checkmark.circle.fill") {
+            }
+            ZStack {
+                ZStack(alignment: .bottom) {
+                    NotebookShape(colorName: colorName)
+                        .overlay {
+                         
+                        }
+                    HStack(alignment: .bottom) {
+                        NotebookButton(symbolName: "trash.circle.fill") {
+                            dismiss()
+                        }
                         
+                        ColorSelectionCapsule(colorName: $colorName)
+
+                        NotebookButton(symbolName: "checkmark.circle.fill") {
+                            
+                        }
                     }
+                    .font(.largeTitle)
+                    .padding(.bottom, 38)
                 }
-                .font(.largeTitle)
-                .padding(.bottom, 38)
+                
+                AddNotebookSubjectView(subject: $subject)
+                    .onTapGesture {
+                        didEditSubject = true
+                    }
             }
             
-            AddNotebookSubjectView(subject: $subject)
+            if !didEditSubject {
+                Text("Choose a \(Text("color").foregroundStyle(Color(colorName: colorName)!).bold()) that fits")
+                    .font(.title3)
+                    .fontWeight(.medium)
+                    
+            }
         }
+        //.frame(maxHeight: .infinity, alignment: .top)
     }
 }
 

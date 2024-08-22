@@ -10,7 +10,7 @@ import SwiftUI
 struct AddNotebookSubjectView: View {
     @Binding var subject: String
     @Environment(\.colorScheme) var colorScheme
-    @FocusState private var isEditingSubject: Bool
+   // @FocusState private var isEditingSubject: Bool
     
     var body: some View {
         VStack {
@@ -24,13 +24,11 @@ struct AddNotebookSubjectView: View {
                 .frame(maxWidth: 300)
                 .scrollDismissesKeyboard(.interactively)
                 .multilineTextAlignment(.center)
-                .focused($isEditingSubject)
+                //.focused($isEditingSubject)
                 
         }
         .foregroundStyle(.black)
-        .onTapGesture {
-            isEditingSubject = true
-        }
+        .navigationTitle("New Notebook")
     }
 }
 
