@@ -1,18 +1,18 @@
 
 
-To Do List
 
 
-Screens:
+#  To Do List
+
+
+## Screens:
 - AddNoteBookView
 - AddNoteView
 - AddStickyView
 
-Interactions:
+## Interactions:
 - Sorting for NotebookListView, NoteListView
 - Editing a Note
 
-SwiftData:
+## SwiftData:
 - View Implementation
-
-
