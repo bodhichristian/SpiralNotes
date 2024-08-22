@@ -6,11 +6,8 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) var modelContext
-    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
@@ -56,6 +53,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(try! ModelContainer(for: Note.self))
 }
 

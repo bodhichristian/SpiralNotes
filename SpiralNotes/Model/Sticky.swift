@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-final class Sticky {
+class Sticky: Identifiable {
     var id: UUID
     var dateCreated: Date
     var title: String?

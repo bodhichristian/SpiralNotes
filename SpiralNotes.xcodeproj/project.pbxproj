@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA4880CE2C7604A800FEF610 /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = AA4880CD2C7604A800FEF610 /* ToDo */; };
+		AA4880D02C76606900FEF610 /* AddNotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880CF2C76606900FEF610 /* AddNotebookView.swift */; };
+		AA4880D22C7663BD00FEF610 /* NotebookSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */; };
+		AA4880D42C767F0900FEF610 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D32C767F0900FEF610 /* NotebookView.swift */; };
 		AA6C37842C724C9300335B42 /* StickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37832C724C9300335B42 /* StickyView.swift */; };
 		AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37852C724D4F00335B42 /* StickyContainerView.swift */; };
 		AA6C37892C72556600335B42 /* NoteStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37882C72556600335B42 /* NoteStack.swift */; };
 		AA6C378C2C725DE700335B42 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378B2C725DE700335B42 /* GradientButton.swift */; };
-		AA6C378F2C72760100335B42 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378E2C72760100335B42 /* NotebookView.swift */; };
+		AA6C378F2C72760100335B42 /* NotebookShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378E2C72760100335B42 /* NotebookShape.swift */; };
 		AA6C37912C72841E00335B42 /* NotebookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37902C72841E00335B42 /* NotebookListView.swift */; };
 		AABF08C32C72AE8300EC2595 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF08C22C72AE8300EC2595 /* NoteListView.swift */; };
 		AABF08C52C72B6FD00EC2595 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */; };
@@ -29,11 +33,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA4880CD2C7604A800FEF610 /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		AA4880CF2C76606900FEF610 /* AddNotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotebookView.swift; sourceTree = "<group>"; };
+		AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookSubjectView.swift; sourceTree = "<group>"; };
+		AA4880D32C767F0900FEF610 /* NotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookView.swift; sourceTree = "<group>"; };
 		AA6C37832C724C9300335B42 /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
 		AA6C37852C724D4F00335B42 /* StickyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyContainerView.swift; sourceTree = "<group>"; };
 		AA6C37882C72556600335B42 /* NoteStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStack.swift; sourceTree = "<group>"; };
 		AA6C378B2C725DE700335B42 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
-		AA6C378E2C72760100335B42 /* NotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookView.swift; sourceTree = "<group>"; };
+		AA6C378E2C72760100335B42 /* NotebookShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookShape.swift; sourceTree = "<group>"; };
 		AA6C37902C72841E00335B42 /* NotebookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookListView.swift; sourceTree = "<group>"; };
 		AABF08C22C72AE8300EC2595 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
@@ -106,8 +114,11 @@
 		AA6C378D2C7275F200335B42 /* Notebook */ = {
 			isa = PBXGroup;
 			children = (
-				AA6C378E2C72760100335B42 /* NotebookView.swift */,
+				AA6C378E2C72760100335B42 /* NotebookShape.swift */,
+				AA4880D32C767F0900FEF610 /* NotebookView.swift */,
+				AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */,
 				AA6C37902C72841E00335B42 /* NotebookListView.swift */,
+				AA4880CF2C76606900FEF610 /* AddNotebookView.swift */,
 			);
 			path = Notebook;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 				AA6C37812C724C5600335B42 /* Views */,
 				AAD6701E2C723D030030ECA6 /* Assets.xcassets */,
 				AAD670202C723D030030ECA6 /* Preview Content */,
+				AA4880CD2C7604A800FEF610 /* ToDo */,
 			);
 			path = SpiralNotes;
 			sourceTree = "<group>";
@@ -228,6 +240,7 @@
 			files = (
 				AAD670222C723D030030ECA6 /* Preview Assets.xcassets in Resources */,
 				AAD6701F2C723D030030ECA6 /* Assets.xcassets in Resources */,
+				AA4880CE2C7604A800FEF610 /* ToDo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,18 +256,21 @@
 				AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */,
 				AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */,
 				AABF08C52C72B6FD00EC2595 /* NoteCardView.swift in Sources */,
-				AA6C378F2C72760100335B42 /* NotebookView.swift in Sources */,
+				AA4880D22C7663BD00FEF610 /* NotebookSubjectView.swift in Sources */,
+				AA6C378F2C72760100335B42 /* NotebookShape.swift in Sources */,
 				AABF08C32C72AE8300EC2595 /* NoteListView.swift in Sources */,
 				AA6C37912C72841E00335B42 /* NotebookListView.swift in Sources */,
 				AA6C378C2C725DE700335B42 /* GradientButton.swift in Sources */,
 				AAC1B3C72C7291A30002F230 /* Color+String.swift in Sources */,
 				AAD6702C2C7244160030ECA6 /* Notebook.swift in Sources */,
 				AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */,
+				AA4880D42C767F0900FEF610 /* NotebookView.swift in Sources */,
 				AAD6702A2C7242A00030ECA6 /* Sticky.swift in Sources */,
 				AAC1B3CB2C729ECB0002F230 /* NoteView.swift in Sources */,
 				AA6C37842C724C9300335B42 /* StickyView.swift in Sources */,
 				AA6C37892C72556600335B42 /* NoteStack.swift in Sources */,
 				AAF83FB42C741B5200BFB970 /* SortButtonLabel.swift in Sources */,
+				AA4880D02C76606900FEF610 /* AddNotebookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

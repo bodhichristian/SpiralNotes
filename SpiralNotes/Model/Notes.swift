@@ -6,15 +6,13 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-final class Note {
+class Note: Identifiable {
     var id: UUID
     var dateCreated: Date
     var title: String?
     var content: String?
-    @Relationship var notebook: Notebook?
+    var notebook: Notebook?
     
     init(
         id: UUID = UUID(),

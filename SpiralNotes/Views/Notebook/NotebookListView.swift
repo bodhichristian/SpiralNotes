@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NotebookListView: View {
+    
+    @State private var isAddingNotebook = false
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -16,7 +19,7 @@ struct NotebookListView: View {
                         NavigationLink {
                             NoteListView(notebook: notebook)
                         } label: {
-                            NotebookView(notebook: notebook)
+                            NotebookShape(notebook: notebook)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
@@ -40,6 +43,9 @@ struct NotebookListView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
+            }
+            .sheet(isPresented: $isAddingNotebook) {
+                // AddNotebookView()
             }
         }
     }

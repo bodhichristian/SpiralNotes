@@ -6,19 +6,17 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-final class Notebook {
+class Notebook: Identifiable {
     var id: UUID
     var subject: String
     var color: String
-    @Relationship var notes: [Note]?
+    var notes: [Note]
     
     init(
         id: UUID = UUID(),
         subject: String,
-        notes: [Note]? = [],
+        notes: [Note] = [],
         color: String = "yellow"
     ) {
         self.id = id
