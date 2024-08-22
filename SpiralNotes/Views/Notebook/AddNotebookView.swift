@@ -14,7 +14,7 @@ struct AddNotebookView: View {
     var body: some View {
         ZStack {
             NotebookShape(notebook: newNoteBook)
-            
+            AddNotebookSubjectView(subject: $newNoteBook.subject)
         }
     }
 }
