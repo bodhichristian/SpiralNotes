@@ -38,9 +38,8 @@ struct AddNotebookView: View {
                 .foregroundStyle(Color.primaryNegative(for: colorScheme))
                 .padding(.bottom, 38)
             }
+            
             AddNotebookSubjectView(subject: $subject)
-            
-            
         }
     }
 }
@@ -48,3 +47,7 @@ struct AddNotebookView: View {
 #Preview {
     AddNotebookView()
 }
+
+
+
+
