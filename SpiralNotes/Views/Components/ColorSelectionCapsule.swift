@@ -35,7 +35,7 @@ struct ColorSelectionCapsule: View {
                                
                             if colorNames[i] == colorName {
                                 Circle()
-                                .stroke(Color.primary, lineWidth: 3)
+                                .stroke(Color.primary, lineWidth: 2)
                             }
                         }
                     }

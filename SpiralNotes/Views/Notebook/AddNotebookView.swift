@@ -12,14 +12,13 @@ struct AddNotebookView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var subject: String = "Subject"
-    @State private var colorName: String = "blue"
-    @State private var newNoteBook: Notebook = Notebook(subject: "Subject", color: "blue")
+    @State private var colorName: String = "purple"
 
     var body: some View {
         ZStack {
             ZStack(alignment: .bottom) {
                 NotebookShape(colorName: colorName)
-                
+
                 HStack {
                     Button {
                         dismiss()
