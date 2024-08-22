@@ -20,6 +20,7 @@
 		AA6C37912C72841E00335B42 /* NotebookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37902C72841E00335B42 /* NotebookListView.swift */; };
 		AABCD3152C76C4630007591F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD3142C76C4630007591F /* ContentView.swift */; };
 		AABCD3172C76CF790007591F /* ColorSelectionCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD3162C76CF790007591F /* ColorSelectionCapsule.swift */; };
+		AABCD3192C7789FD0007591F /* NotebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD3182C7789FD0007591F /* NotebookButton.swift */; };
 		AABF08C32C72AE8300EC2595 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF08C22C72AE8300EC2595 /* NoteListView.swift */; };
 		AABF08C52C72B6FD00EC2595 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */; };
 		AAC1B3C72C7291A30002F230 /* Color+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1B3C62C7291A30002F230 /* Color+String.swift */; };
@@ -49,6 +50,7 @@
 		AA6C37902C72841E00335B42 /* NotebookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookListView.swift; sourceTree = "<group>"; };
 		AABCD3142C76C4630007591F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AABCD3162C76CF790007591F /* ColorSelectionCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCapsule.swift; sourceTree = "<group>"; };
+		AABCD3182C7789FD0007591F /* NotebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookButton.swift; sourceTree = "<group>"; };
 		AABF08C22C72AE8300EC2595 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
 		AAC1B3C62C7291A30002F230 /* Color+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+String.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				AA6C378B2C725DE700335B42 /* GradientButton.swift */,
+				AABCD3182C7789FD0007591F /* NotebookButton.swift */,
 				AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */,
 				AAC1B3CC2C72A8BA0002F230 /* ToolbarButtonLabel.swift */,
 				AABCD3162C76CF790007591F /* ColorSelectionCapsule.swift */,
@@ -260,6 +263,7 @@
 			files = (
 				AAC1B3CD2C72A8BA0002F230 /* ToolbarButtonLabel.swift in Sources */,
 				AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */,
+				AABCD3192C7789FD0007591F /* NotebookButton.swift in Sources */,
 				AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */,
 				AABF08C52C72B6FD00EC2595 /* NoteCardView.swift in Sources */,
 				AA4880D22C7663BD00FEF610 /* NotebookSubjectView.swift in Sources */,

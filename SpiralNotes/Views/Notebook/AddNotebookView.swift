@@ -18,24 +18,21 @@ struct AddNotebookView: View {
         ZStack {
             ZStack(alignment: .bottom) {
                 NotebookShape(colorName: colorName)
-
-                HStack {
-                    Button {
+                    .overlay {
+                     
+                    }
+                HStack(alignment: .bottom) {
+                    NotebookButton(symbolName: "trash.circle.fill") {
                         dismiss()
-                    } label: {
-                        Image(systemName: "trash.circle.fill")
                     }
                     
                     ColorSelectionCapsule(colorName: $colorName)
 
-                    Button {
-                        // save notebook to swiftdata
-                    } label:{
-                        Image(systemName: "checkmark.circle.fill")
+                    NotebookButton(symbolName: "checkmark.circle.fill") {
+                        
                     }
                 }
                 .font(.largeTitle)
-                .foregroundStyle(Color.primaryNegative(for: colorScheme))
                 .padding(.bottom, 38)
             }
             

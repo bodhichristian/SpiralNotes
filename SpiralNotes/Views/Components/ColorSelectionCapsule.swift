@@ -10,6 +10,7 @@ import SwiftUI
 struct ColorSelectionCapsule: View {
     @Binding var colorName: String
     @Environment(\.colorScheme) var colorScheme
+    @Namespace private var namespace
     
     private let colorNames = [
         "red",
@@ -21,12 +22,15 @@ struct ColorSelectionCapsule: View {
     ]
 
     var body: some View {
-        ZStack{
+        ZStack {
             Capsule()
+                .foregroundStyle(Color.primaryNegative(for: colorScheme))
             HStack {
                 ForEach(0..<6) { i in
                     Button {
-                        colorName = colorNames[i]
+                        withAnimation(.easeInOut(duration: 0.2)){
+                            colorName = colorNames[i]
+                        }
 
                     }label:{
                         ZStack {
@@ -36,6 +40,7 @@ struct ColorSelectionCapsule: View {
                             if colorNames[i] == colorName {
                                 Circle()
                                 .stroke(Color.primary, lineWidth: 2)
+                                .matchedGeometryEffect(id: "selectedColor", in: namespace)
                             }
                         }
                     }
