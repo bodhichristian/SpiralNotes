@@ -12,6 +12,8 @@ struct NoteView: View {
     let note: Note
     let notebook: Notebook
     
+    @State private var noteContent: String = ""
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             LinearGradient(
@@ -29,12 +31,11 @@ struct NoteView: View {
             // Note Contents
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text(note.content ?? "")
-                        .frame(
-                            maxWidth: .infinity,
-                            maxHeight: .infinity,
-                            alignment: .topLeading
-                        )
+                    TextEditor(text: $noteContent)
+                        .onAppear {
+                            noteContent = note.content ?? ""
+                        }
+                        .textEditorStyle(.plain)
                 }
                 .padding()
             }

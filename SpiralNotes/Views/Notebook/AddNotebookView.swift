@@ -18,9 +18,7 @@ struct AddNotebookView: View {
         ZStack {
             ZStack(alignment: .bottom) {
                 NotebookShape(colorName: colorName)
-                    .overlay {
-                     
-                    }
+
                 HStack(alignment: .bottom) {
                     NotebookButton(symbolName: "trash.circle.fill") {
                         dismiss()
