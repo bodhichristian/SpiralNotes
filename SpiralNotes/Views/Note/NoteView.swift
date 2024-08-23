@@ -32,14 +32,21 @@ struct NoteView: View {
             // Note Contents
             ScrollView {
                 VStack(alignment: .leading) {
+                    Text("Last edit: \(note.dateCreated.formatted(date: .numeric, time: .shortened))")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.secondary)
+                        .padding(.leading)
+                        
                     TextEditor(text: $noteContent)
                         .onAppear {
                             noteContent = note.content ?? ""
                         }
                         .textEditorStyle(.plain)
                         .focused($isEditingNote)
+                    
+                        .padding()
                 }
-                .padding()
             }
             
             Button {
@@ -57,7 +64,7 @@ struct NoteView: View {
                             .fontWeight(.medium)
                             .foregroundStyle(.white)
                             .padding(40)
-                            
+                        
                     }
             }
             .buttonStyle(PlainButtonStyle())

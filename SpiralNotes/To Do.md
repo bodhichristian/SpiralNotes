@@ -6,13 +6,12 @@
 
 
 ## Screens:
-- AddNoteBookView
 - AddNoteView
 - AddStickyView
 
 ## Interactions:
 - Sorting for NotebookListView, NoteListView
-- Editing a Note
+- Note formatting
 
 ## SwiftData:
 - View Implementation

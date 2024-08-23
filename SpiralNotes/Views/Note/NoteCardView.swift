@@ -43,63 +43,78 @@ struct NoteCardView: View {
             RoundedRectangle(cornerRadius: 10)
             
                 .foregroundStyle(textColor)
-                .shadow(radius: 4)
+                .shadow(radius: 2, y: 2)
             // Card Content
             VStack(alignment: .leading, spacing: 0) {
+                
+                // Header
+                HStack {
+                    Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
+                        .font(.title3)
+                        .fontWeight(.semibold)
                     
-                    // Header
-                    HStack {
-                        Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.white)
-                            .shadow(radius: 1)
-                        
-                        
-                        Spacer()
-                        
-                        Image(systemName: "ellipsis.circle")
-                            .foregroundStyle(.white)
-                    }
-                    //.foregroundStyle(textColor)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "ellipsis.circle")
+                    
+                }
+                //.foregroundStyle(textColor)
+                .padding(.horizontal)
+                .padding(.vertical, 12)
+                .background {
+                    UnevenRoundedRectangle(
+                        cornerRadii: RectangleCornerRadii(
+                            topLeading: 10,
+                            bottomLeading: 0,
+                            bottomTrailing: 0,
+                            topTrailing: 10
+                        ),
+                        style: .continuous
+                    )
+                    
+                    .foregroundStyle(/*Color(colorName: notebook.color)!.gradient*/
+                        LinearGradient(
+                            colors: [
+                                Color(colorName: notebook.color)!.opacity(0.1),
+                                Color(colorName: notebook.color)!.opacity(0.1),
+                                Color(colorName: notebook.color)!.opacity(0.2),
+                                Color(colorName: notebook.color)!.opacity(0.3)
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                }
+                
+                
+                Text(note.content ?? "")
                     .padding(.horizontal)
-                    .padding(.vertical, 12)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity, minHeight: 120, maxHeight: 200, alignment: .topLeading)
                     .background {
-                            UnevenRoundedRectangle(
-                                cornerRadii: RectangleCornerRadii(
-                                    topLeading: 10,
-                                    bottomLeading: 0,
-                                    bottomTrailing: 0,
-                                    topTrailing: 10
-                                ),
-                                style: .continuous
+                        UnevenRoundedRectangle(
+                            cornerRadii: RectangleCornerRadii(
+                                topLeading: 0,
+                                bottomLeading: 10,
+                                bottomTrailing: 10,
+                                topTrailing: 0
+                            ),
+                            style: .continuous
+                        )
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [
+                                    Color(colorName: notebook.color)!.opacity(0.1),
+                                    Color(colorName: notebook.color)!.opacity(0.1),
+                                    Color(colorName: notebook.color)!.opacity(0.2),
+                                    Color(colorName: notebook.color)!.opacity(0.3)
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
                             )
-                            
-                            .foregroundStyle(Color(colorName: notebook.color)!.gradient)
+                        )
                     }
-                   
-                    
-                    Text(note.content ?? "")
-                        .padding()
-                        .frame(maxWidth: .infinity, minHeight: 120, maxHeight: 200, alignment: .leading)
-                        .background {
-                            UnevenRoundedRectangle(
-                                cornerRadii: RectangleCornerRadii(
-                                    topLeading: 0,
-                                    bottomLeading: 10,
-                                    bottomTrailing: 10,
-                                    topTrailing: 0
-                                ),
-                                style: .continuous
-                            )
-                            .foregroundStyle(
-                                LinearGradient(
-                                    colors: [Color(colorName: notebook.color)!.opacity(0.1), Color(colorName: notebook.color)!.opacity(0.2)],
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                )
-                            )
-                        }
                 
             }
         }
