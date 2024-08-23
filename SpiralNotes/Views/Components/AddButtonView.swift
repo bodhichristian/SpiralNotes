@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddButtonView: View {
     @Binding var didTapAddButton: Bool
+    @Binding var isAddingNotebook: Bool
     
     var body: some View {
         ZStack { // Base Shape
@@ -20,29 +21,29 @@ struct AddButtonView: View {
                         endPoint: .bottomTrailing
                     )
                 )
-                .frame(maxWidth: didTapAddButton ? .infinity : 60 , maxHeight: 60)
                 .overlay {
-                    if didTapAddButton {
-                        Capsule()
-                            .stroke(lineWidth: 3)
-                            .foregroundStyle(LinearGradient(
-                                colors: [.yellow, .purple],
-                                startPoint: .topTrailing,
-                                endPoint: .bottomLeading
-                            ))
-                            .transition(.blurReplace)
-                        
-                    }
+                    Capsule()
+                        .stroke(lineWidth: 3)
+                        .foregroundStyle(LinearGradient(
+                            colors: [.yellow, .purple],
+                            startPoint: .topTrailing,
+                            endPoint: .bottomLeading
+                        ))
+                        .opacity(didTapAddButton ? 1.0 :  0.0)
                 }
-            
+                .frame(maxWidth: didTapAddButton ? .infinity : 60 , maxHeight: 60)
             
             HStack { // Button Row
-                
                 if didTapAddButton {
                     Text("New")
                         .font(.headline)
                         .foregroundStyle(.black)
-                        .transition(.blurReplace)
+                        .transition(
+                            .asymmetric(
+                                insertion: .push(from: .trailing).combined(with: .opacity),
+                                removal: .push(from: .leading).combined(with: .opacity)
+                            )
+                        )
                     
                     HStack(spacing: 20) {
                         Button {
@@ -52,7 +53,10 @@ struct AddButtonView: View {
                         }
                         
                         Button {
-                            // add notebook
+                            withAnimation{
+                                isAddingNotebook = true
+                                didTapAddButton = false
+                            }
                         } label: {
                             Image(systemName: "text.book.closed")
                         }
@@ -88,12 +92,12 @@ struct AddButtonView: View {
             .fontWeight(.medium)
             .frame(alignment: .trailing)
             .padding(.horizontal, 20)
-
+            
         }
         .padding(20)
     }
 }
 
 #Preview {
-    AddButtonView(didTapAddButton: .constant(false))
+    AddButtonView(didTapAddButton: .constant(false), isAddingNotebook: .constant(false))
 }

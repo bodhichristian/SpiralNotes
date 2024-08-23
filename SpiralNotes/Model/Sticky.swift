@@ -11,14 +11,14 @@ class Sticky: Identifiable {
     var id: UUID
     var dateCreated: Date
     var title: String?
-    var content: String?
+    var content: String
     var color: String
     
     init(
         id: UUID = UUID(),
         dateCreated: Foundation.Date = Date.now,
         title: String? = nil,
-        content: String? = nil,
+        content: String,
         color: String = "yellow"
     ) {
         self.id = id

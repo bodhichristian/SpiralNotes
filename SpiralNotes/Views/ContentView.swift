@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State private var didTapAddButton: Bool = false
+    @State private var isAddingNote: Bool = false
+    @State private var isAddingNotebook: Bool = false
+    @State private var isAddingSticky: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -37,29 +41,36 @@ struct HomeView: View {
                     NoteStack()
                         .padding(.top, -20)
                 }
-                    Rectangle()
-                    .foregroundStyle(.black.gradient)
-                        .ignoresSafeArea()
-                        .opacity(didTapAddButton ? 0.8 : 0.0)
-                        .transition(.opacity)
-                        .onTapGesture {
-                            withAnimation(.smooth) {
-                                didTapAddButton = false
-                            }
-                        }
                 
-                AddButtonView(didTapAddButton: $didTapAddButton)
+                Rectangle()
+                    .foregroundStyle(Color.primaryNegative(for: colorScheme).gradient)
+                    .ignoresSafeArea()
+                    .opacity(didTapAddButton ? 0.8 : 0.0)
+                    .transition(.opacity)
+                    .onTapGesture {
+                        withAnimation(.smooth) {
+                            didTapAddButton = false
+                        }
+                    }
+                
+                AddButtonView(didTapAddButton: $didTapAddButton, isAddingNotebook: $isAddingNotebook)
             }
             .toolbar {
                 ToolbarItem {
-                    Button {
-                        // Open SettingsView
+                    NavigationLink {
+                        Text("Settings View")
+                            .font(.largeTitle)
+                            .fontWeight(.medium)
                     } label: {
                         Image(systemName: "gear")
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
             }
+            .sheet(isPresented: $isAddingNotebook) {
+                    AddNotebookView()
+            }
+
         }
     }
 }
