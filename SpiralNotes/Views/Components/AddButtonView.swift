@@ -9,7 +9,10 @@ import SwiftUI
 
 struct AddButtonView: View {
     @Binding var didTapAddButton: Bool
+    @Binding var isAddingNote: Bool
     @Binding var isAddingNotebook: Bool
+    @Binding var isAddingSticky: Bool
+    
     
     var body: some View {
         ZStack { // Base Shape
@@ -47,13 +50,16 @@ struct AddButtonView: View {
                     
                     HStack(spacing: 20) {
                         Button {
-                            // add sticky
+                            withAnimation {
+                                isAddingSticky = true
+                                didTapAddButton = false
+                            }
                         } label: {
                             Image(systemName: "square.on.square")
                         }
                         
                         Button {
-                            withAnimation{
+                            withAnimation {
                                 isAddingNotebook = true
                                 didTapAddButton = false
                             }
@@ -62,7 +68,10 @@ struct AddButtonView: View {
                         }
                         
                         Button {
-                            // add note
+                            withAnimation {
+                                isAddingNote = true
+                                didTapAddButton = false
+                            }
                         } label: {
                             Image(systemName: "note.text")
                         }
@@ -99,5 +108,5 @@ struct AddButtonView: View {
 }
 
 #Preview {
-    AddButtonView(didTapAddButton: .constant(false), isAddingNotebook: .constant(false))
+    AddButtonView(didTapAddButton: .constant(false), isAddingNote: .constant(false), isAddingNotebook: .constant(false), isAddingSticky: .constant(false))
 }

@@ -12,7 +12,7 @@
 		AA4880D42C767F0900FEF610 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D32C767F0900FEF610 /* NotebookView.swift */; };
 		AA4880D62C76BC9800FEF610 /* AddNotebookSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D52C76BC9800FEF610 /* AddNotebookSubjectView.swift */; };
 		AA4880D82C76BE0F00FEF610 /* Color+PrimaryNegative.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D72C76BE0F00FEF610 /* Color+PrimaryNegative.swift */; };
-		AA6C37842C724C9300335B42 /* StickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37832C724C9300335B42 /* StickyView.swift */; };
+		AA6C37842C724C9300335B42 /* StickyPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37832C724C9300335B42 /* StickyPreview.swift */; };
 		AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37852C724D4F00335B42 /* StickyContainerView.swift */; };
 		AA6C37892C72556600335B42 /* NoteStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37882C72556600335B42 /* NoteStack.swift */; };
 		AA6C378C2C725DE700335B42 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378B2C725DE700335B42 /* AddButtonView.swift */; };
@@ -22,6 +22,8 @@
 		AABCD3172C76CF790007591F /* ColorSelectionCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD3162C76CF790007591F /* ColorSelectionCapsule.swift */; };
 		AABCD3192C7789FD0007591F /* NotebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD3182C7789FD0007591F /* NotebookButton.swift */; };
 		AABCD31B2C790EE50007591F /* AddStickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD31A2C790EE50007591F /* AddStickyView.swift */; };
+		AABCD31D2C7916EA0007591F /* StickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD31C2C7916EA0007591F /* StickyView.swift */; };
+		AABCD31F2C79424C0007591F /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD31E2C79424C0007591F /* AddNoteView.swift */; };
 		AABF08C32C72AE8300EC2595 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF08C22C72AE8300EC2595 /* NoteListView.swift */; };
 		AABF08C52C72B6FD00EC2595 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */; };
 		AAC1B3C72C7291A30002F230 /* Color+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1B3C62C7291A30002F230 /* Color+String.swift */; };
@@ -43,7 +45,7 @@
 		AA4880D32C767F0900FEF610 /* NotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookView.swift; sourceTree = "<group>"; };
 		AA4880D52C76BC9800FEF610 /* AddNotebookSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotebookSubjectView.swift; sourceTree = "<group>"; };
 		AA4880D72C76BE0F00FEF610 /* Color+PrimaryNegative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+PrimaryNegative.swift"; sourceTree = "<group>"; };
-		AA6C37832C724C9300335B42 /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
+		AA6C37832C724C9300335B42 /* StickyPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyPreview.swift; sourceTree = "<group>"; };
 		AA6C37852C724D4F00335B42 /* StickyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyContainerView.swift; sourceTree = "<group>"; };
 		AA6C37882C72556600335B42 /* NoteStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStack.swift; sourceTree = "<group>"; };
 		AA6C378B2C725DE700335B42 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		AABCD3162C76CF790007591F /* ColorSelectionCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCapsule.swift; sourceTree = "<group>"; };
 		AABCD3182C7789FD0007591F /* NotebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookButton.swift; sourceTree = "<group>"; };
 		AABCD31A2C790EE50007591F /* AddStickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStickyView.swift; sourceTree = "<group>"; };
+		AABCD31C2C7916EA0007591F /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
+		AABCD31E2C79424C0007591F /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		AABF08C22C72AE8300EC2595 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
 		AAC1B3C62C7291A30002F230 /* Color+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+String.swift"; sourceTree = "<group>"; };
@@ -94,7 +98,8 @@
 		AA6C37822C724C5F00335B42 /* Sticky */ = {
 			isa = PBXGroup;
 			children = (
-				AA6C37832C724C9300335B42 /* StickyView.swift */,
+				AA6C37832C724C9300335B42 /* StickyPreview.swift */,
+				AABCD31C2C7916EA0007591F /* StickyView.swift */,
 				AABCD31A2C790EE50007591F /* AddStickyView.swift */,
 				AA6C37852C724D4F00335B42 /* StickyContainerView.swift */,
 			);
@@ -107,6 +112,7 @@
 				AA6C37882C72556600335B42 /* NoteStack.swift */,
 				AABF08C22C72AE8300EC2595 /* NoteListView.swift */,
 				AAC1B3CA2C729ECB0002F230 /* NoteView.swift */,
+				AABCD31E2C79424C0007591F /* AddNoteView.swift */,
 				AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */,
 			);
 			path = Note;
@@ -270,6 +276,7 @@
 				AABCD31B2C790EE50007591F /* AddStickyView.swift in Sources */,
 				AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */,
 				AABF08C52C72B6FD00EC2595 /* NoteCardView.swift in Sources */,
+				AABCD31F2C79424C0007591F /* AddNoteView.swift in Sources */,
 				AA4880D22C7663BD00FEF610 /* NotebookSubjectView.swift in Sources */,
 				AA6C378F2C72760100335B42 /* NotebookShape.swift in Sources */,
 				AABCD3172C76CF790007591F /* ColorSelectionCapsule.swift in Sources */,
@@ -284,11 +291,12 @@
 				AAD6702A2C7242A00030ECA6 /* Sticky.swift in Sources */,
 				AAC1B3CB2C729ECB0002F230 /* NoteView.swift in Sources */,
 				AABCD3152C76C4630007591F /* ContentView.swift in Sources */,
-				AA6C37842C724C9300335B42 /* StickyView.swift in Sources */,
+				AA6C37842C724C9300335B42 /* StickyPreview.swift in Sources */,
 				AA6C37892C72556600335B42 /* NoteStack.swift in Sources */,
 				AA4880D82C76BE0F00FEF610 /* Color+PrimaryNegative.swift in Sources */,
 				AAF83FB42C741B5200BFB970 /* SortButtonLabel.swift in Sources */,
 				AA4880D02C76606900FEF610 /* AddNotebookView.swift in Sources */,
+				AABCD31D2C7916EA0007591F /* StickyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

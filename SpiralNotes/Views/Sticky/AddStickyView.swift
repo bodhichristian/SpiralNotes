@@ -8,39 +8,61 @@
 import SwiftUI
 
 struct AddStickyView: View {
-    @State private var sticky = Sticky(content: "New sticky")
+    @Environment(\.dismiss) private var dismiss
+    @State private var newSticky = Sticky(title: "New Sticky", content: "Write here.", color: "yellow")
+    
+    @State private var stickyColor = "yellow"
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .foregroundStyle(.yellow.gradient)
-            .frame(maxWidth: 320, maxHeight: 320)
-            .shadow(radius: 4, y: 4)
-            .overlay {
-                VStack(alignment: .leading) {
-                    TextField("Sticky Title", text: $sticky.content)
-                        .foregroundStyle(.black)
-                        .font(.title2)
-                        .fontWeight(.semibold)
+        VStack {
+            ZStack(alignment: .bottom) {
+                
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundStyle(Color(colorName: stickyColor)!.gradient)
+                    .frame(maxWidth: 320, maxHeight: 320)
+                    .shadow(radius: 4, y: 4)
+                    .overlay {
+                        VStack(alignment: .leading, spacing: 4) {
+                            TextField("Sticky Title", text: $newSticky.title)
+                                .foregroundStyle(.black)
+                                .font(.title)
+                                .fontWeight(.semibold)
+                            
+                            Text(Date.now.formatted(date: .numeric, time: .omitted))
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.black)
+                                .padding(.bottom, 4)
+                            
+                            TextEditor(text: $newSticky.content)
+                                .textEditorStyle(.plain)
+                                .multilineTextAlignment(.leading)
+                                .font(.subheadline)
+                                .foregroundStyle(.black)
+                                .padding(-4)
+                        }
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity,
+                            alignment: .topLeading
+                        )
+                        .padding()
+                    }
+                HStack(alignment: .bottom) {
+                    NotebookButton(symbolName: "trash.circle.fill") {
+                        dismiss()
+                    }
                     
-                    Text(Date.now.formatted(date: .numeric, time: .omitted))
-                        .fontWeight(.medium)
-                        .foregroundStyle(.purple)
-                        .padding(.bottom, 4)
+                    ColorSelectionCapsule(colorName: $stickyColor)
                     
-                    TextEditor(text: $sticky.content)
-                        .textEditorStyle(.plain)
-                        .multilineTextAlignment(.leading)
-                        .font(.subheadline)
-                        .foregroundStyle(.black)
-                        .padding(-4)
+                    NotebookButton(symbolName: "checkmark.circle.fill") {
+                        
+                    }
                 }
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity,
-                    alignment: .topLeading
-                )
-                .padding()
+                .font(.largeTitle)
+                .padding(.bottom)
             }
+            
+        }
     }
 }
 

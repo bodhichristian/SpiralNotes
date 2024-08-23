@@ -12,7 +12,7 @@ struct ColorSelectionCapsule: View {
     @Environment(\.colorScheme) var colorScheme
     @Namespace private var namespace
     
-    private let colorNames = [
+    let colorNames = [
         "red",
         "blue",
         "purple",

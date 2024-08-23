@@ -10,14 +10,14 @@ import Foundation
 class Sticky: Identifiable {
     var id: UUID
     var dateCreated: Date
-    var title: String?
+    var title: String
     var content: String
     var color: String
     
     init(
         id: UUID = UUID(),
         dateCreated: Foundation.Date = Date.now,
-        title: String? = nil,
+        title: String = "",
         content: String,
         color: String = "yellow"
     ) {

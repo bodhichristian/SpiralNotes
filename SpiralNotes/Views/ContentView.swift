@@ -53,7 +53,12 @@ struct HomeView: View {
                         }
                     }
                 
-                AddButtonView(didTapAddButton: $didTapAddButton, isAddingNotebook: $isAddingNotebook)
+                AddButtonView(
+                    didTapAddButton: $didTapAddButton,
+                    isAddingNote: $isAddingNote,
+                    isAddingNotebook: $isAddingNotebook,
+                    isAddingSticky: $isAddingSticky
+                )
             }
             .toolbar {
                 ToolbarItem {
@@ -67,10 +72,15 @@ struct HomeView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
             }
-            .sheet(isPresented: $isAddingNotebook) {
-                    AddNotebookView()
+            .sheet(isPresented: $isAddingNote) {
+                AddNoteView()
             }
-
+            .sheet(isPresented: $isAddingNotebook) {
+                AddNotebookView()
+            }
+            .sheet(isPresented: $isAddingSticky) {
+                AddStickyView()
+            }
         }
     }
 }

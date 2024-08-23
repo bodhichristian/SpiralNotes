@@ -13,10 +13,10 @@ struct StickyContainerView: View {
             HStack {
                 ForEach(0..<6) { i in
                     NavigationLink {
-                        StickyView(sticky: Sticky(content: "Sticky number \(i + 1)"))
+                        StickyPreview(sticky: Sticky(content: "Sticky number \(i + 1)"))
                     } label: {
                         HStack {
-                            StickyView(sticky: Sticky(content: "Sticky number \(i + 1)"))
+                            StickyPreview(sticky: Sticky(content: "Sticky number \(i + 1)"))
                                 .frame(width: 200, height: 200)
                                 .padding(6)
                             
