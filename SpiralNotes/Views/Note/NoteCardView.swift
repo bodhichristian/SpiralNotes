@@ -73,17 +73,7 @@ struct NoteCardView: View {
                         style: .continuous
                     )
                     
-                    .foregroundStyle(/*Color(colorName: notebook.color)!.gradient*/
-                        LinearGradient(
-                            colors: [
-                                Color(colorName: notebook.color)!.opacity(0.1),
-                                Color(colorName: notebook.color)!.opacity(0.1),
-                                Color(colorName: notebook.color)!.opacity(0.2),
-                                Color(colorName: notebook.color)!.opacity(0.3)
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
+                    .foregroundStyle(Color(colorName: notebook.color)!.opacity(0.5)
                     )
                 }
                 

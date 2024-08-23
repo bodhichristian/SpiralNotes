@@ -43,8 +43,7 @@ struct NoteView: View {
                             noteContent = note.content ?? ""
                         }
                         .textEditorStyle(.plain)
-                        .focused($isEditingNote)
-                    
+                        .focused($isEditingNote)                    
                         .padding()
                 }
             }
