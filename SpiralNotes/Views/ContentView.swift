@@ -40,11 +40,15 @@ struct HomeView: View {
                     Rectangle()
                     .foregroundStyle(.black.gradient)
                         .ignoresSafeArea()
-                        .opacity(didTapAddButton ? 0.5 : 0.0)
+                        .opacity(didTapAddButton ? 0.8 : 0.0)
                         .transition(.opacity)
-                        .allowsHitTesting(false)
+                        .onTapGesture {
+                            withAnimation(.smooth) {
+                                didTapAddButton = false
+                            }
+                        }
                 
-                GradientButton(didTapAddButton: $didTapAddButton)
+                AddButtonView(didTapAddButton: $didTapAddButton)
             }
             .toolbar {
                 ToolbarItem {

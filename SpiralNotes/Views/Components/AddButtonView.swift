@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GradientButton: View {
+struct AddButtonView: View {
     @Binding var didTapAddButton: Bool
     
     var body: some View {
@@ -20,12 +20,18 @@ struct GradientButton: View {
                         endPoint: .bottomTrailing
                     )
                 )
-                .frame(maxWidth: didTapAddButton ? .infinity : 70 , maxHeight: 70)
+                .frame(maxWidth: didTapAddButton ? .infinity : 60 , maxHeight: 60)
                 .overlay {
                     if didTapAddButton {
                         Capsule()
-                            .stroke(lineWidth: 2)
+                            .stroke(lineWidth: 3)
+                            .foregroundStyle(LinearGradient(
+                                colors: [.yellow, .purple],
+                                startPoint: .topTrailing,
+                                endPoint: .bottomLeading
+                            ))
                             .transition(.blurReplace)
+                        
                     }
                 }
             
@@ -37,8 +43,8 @@ struct GradientButton: View {
                         .font(.headline)
                         .foregroundStyle(.black)
                         .transition(.blurReplace)
-                    HStack(spacing: 20) {
                     
+                    HStack(spacing: 20) {
                         Button {
                             // add sticky
                         } label: {
@@ -56,9 +62,9 @@ struct GradientButton: View {
                         } label: {
                             Image(systemName: "note.text")
                         }
-                        
                     }
                     .foregroundStyle(.white)
+                    .shadow(radius: 2)
                     .frame(maxWidth: .infinity)
                     .transition(
                         AsymmetricTransition(
@@ -89,5 +95,5 @@ struct GradientButton: View {
 }
 
 #Preview {
-    GradientButton(didTapAddButton: .constant(false))
+    AddButtonView(didTapAddButton: .constant(false))
 }
