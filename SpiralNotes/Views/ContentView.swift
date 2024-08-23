@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var didTapAddButton: Bool = false
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
@@ -35,7 +37,14 @@ struct HomeView: View {
                     NoteStack()
                         .padding(.top, -20)
                 }
-                GradientButton(iconName: "plus")
+                    Rectangle()
+                    .foregroundStyle(.black.gradient)
+                        .ignoresSafeArea()
+                        .opacity(didTapAddButton ? 0.5 : 0.0)
+                        .transition(.opacity)
+                        .allowsHitTesting(false)
+                
+                GradientButton(didTapAddButton: $didTapAddButton)
             }
             .toolbar {
                 ToolbarItem {
