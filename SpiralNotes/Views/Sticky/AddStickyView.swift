@@ -46,6 +46,7 @@ struct AddStickyView: View {
                             HStack {
                                 if includingDate {
                                     Text(Date.now.formatted(date: .numeric, time: .omitted))
+                                        .font(.caption)
                                         .fontWeight(.semibold)
                                         .foregroundStyle(.black)
                                         .padding(.bottom, 4)

@@ -9,8 +9,8 @@
 
 ## Interactions:
 [x] 'Add' menu
-[ ] Sticky previews 
-[ ] StickyView text editor
+[x] Sticky previews 
+[x] StickyView text editor
 
 # Adopt SwiftData
 [ ] Adopt use of @Model macro

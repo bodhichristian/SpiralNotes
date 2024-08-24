@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StickyView: View {
-    @Binding var sticky: Sticky
+    @Bindable var sticky: Sticky
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
@@ -23,8 +23,9 @@ struct StickyView: View {
                         .fontWeight(.semibold)
                     
                     Text(Date.now.formatted(date: .numeric, time: .omitted))
+                        .font(.caption)
                         .fontWeight(.medium)
-                        .foregroundStyle(.purple)
+                        .foregroundStyle(.black)
                         .padding(.bottom, 4)
                     
                     TextEditor(text: $sticky.content)
@@ -45,5 +46,5 @@ struct StickyView: View {
 }
 
 #Preview {
-    StickyView(sticky: .constant(Sticky(content: "")))
+    StickyView(sticky: Sticky.mockData[0])
 }

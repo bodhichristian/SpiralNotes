@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class Note: Identifiable {
     var id: UUID
     var dateCreated: Date

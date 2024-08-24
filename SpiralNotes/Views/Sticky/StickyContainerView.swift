@@ -11,12 +11,12 @@ struct StickyContainerView: View {
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(0..<6) { i in
+                ForEach(Sticky.mockData) { sticky in
                     NavigationLink {
-                        StickyPreview(sticky: Sticky(content: "Sticky number \(i + 1)"))
+                        StickyView(sticky: sticky)
                     } label: {
                         HStack {
-                            StickyPreview(sticky: Sticky(content: "Sticky number \(i + 1)"))
+                            StickyPreview(sticky: sticky)
                                 .frame(width: 200, height: 200)
                                 .padding(6)
                             

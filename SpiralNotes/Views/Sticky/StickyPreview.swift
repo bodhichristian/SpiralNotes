@@ -17,14 +17,15 @@ struct StickyPreview: View {
             .shadow(radius: 4, y: 4)
             .overlay {
                 VStack(alignment: .leading) {
-                    Text("Sticky Title")
+                    Text(sticky.title)
                         .foregroundStyle(.black)
-                        .font(.title2)
+                        .font(.title3)
                         .fontWeight(.semibold)
                     
                     Text(Date.now.formatted(date: .numeric, time: .omitted))
+                        .font(.caption)
                         .fontWeight(.medium)
-                        .foregroundStyle(.purple)
+                        .foregroundStyle(.black)
                         .padding(.bottom, 4)
                     
                     Text(sticky.content)

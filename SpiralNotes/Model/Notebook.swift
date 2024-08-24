@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class Notebook: Identifiable {
     var id: UUID
     var subject: String
