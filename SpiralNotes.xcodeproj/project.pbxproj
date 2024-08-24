@@ -98,10 +98,10 @@
 		AA6C37822C724C5F00335B42 /* Sticky */ = {
 			isa = PBXGroup;
 			children = (
-				AA6C37832C724C9300335B42 /* StickyPreview.swift */,
-				AABCD31C2C7916EA0007591F /* StickyView.swift */,
 				AABCD31A2C790EE50007591F /* AddStickyView.swift */,
 				AA6C37852C724D4F00335B42 /* StickyContainerView.swift */,
+				AA6C37832C724C9300335B42 /* StickyPreview.swift */,
+				AABCD31C2C7916EA0007591F /* StickyView.swift */,
 			);
 			path = Sticky;
 			sourceTree = "<group>";
@@ -109,10 +109,10 @@
 		AA6C37872C72555100335B42 /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				AABCD31E2C79424C0007591F /* AddNoteView.swift */,
 				AA6C37882C72556600335B42 /* NoteStack.swift */,
 				AABF08C22C72AE8300EC2595 /* NoteListView.swift */,
 				AAC1B3CA2C729ECB0002F230 /* NoteView.swift */,
-				AABCD31E2C79424C0007591F /* AddNoteView.swift */,
 				AABF08C42C72B6FD00EC2595 /* NoteCardView.swift */,
 			);
 			path = Note;
