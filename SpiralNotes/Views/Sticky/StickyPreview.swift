@@ -2,22 +2,22 @@
 //  StickyView.swift
 //  SpiralNotes
 //
-//  Created by christian on 8/23/24.
+//  Created by christian on 8/18/24.
 //
 
 import SwiftUI
 
-struct StickyView: View {
-    @Binding var sticky: Sticky
+struct StickyPreview: View {
+    let sticky: Sticky
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .foregroundStyle(Color(colorName: sticky.color)!.gradient)
+            .foregroundStyle(.yellow.gradient)
             .frame(maxWidth: 320, maxHeight: 320)
             .shadow(radius: 4, y: 4)
             .overlay {
                 VStack(alignment: .leading) {
-                    TextField("Sticky Title", text: $sticky.title)
+                    Text("Sticky Title")
                         .foregroundStyle(.black)
                         .font(.title2)
                         .fontWeight(.semibold)
@@ -27,12 +27,10 @@ struct StickyView: View {
                         .foregroundStyle(.purple)
                         .padding(.bottom, 4)
                     
-                    TextEditor(text: $sticky.content)
-                        .textEditorStyle(.plain)
-                        .multilineTextAlignment(.leading)
-                        .font(.subheadline)
-                        .foregroundStyle(.black)
-                        .padding(-4)
+                    Text(sticky.content)
+                    .multilineTextAlignment(.leading)
+                    .font(.subheadline)
+                    .foregroundStyle(.black)
                 }
                 .frame(
                     maxWidth: .infinity,
@@ -45,5 +43,5 @@ struct StickyView: View {
 }
 
 #Preview {
-    StickyView(sticky: .constant(Sticky(content: "")))
+    StickyPreview(sticky: Sticky(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua."))
 }
