@@ -9,11 +9,8 @@ import SwiftUI
 
 struct AddButtonView: View {
     @Binding var didTapAddButton: Bool
-    @Binding var isAddingNote: Bool
-    @Binding var isAddingNotebook: Bool
-    @Binding var isAddingSticky: Bool
-    
-    
+    @Binding var newObjectType: NewObjectType?
+
     var body: some View {
         ZStack { // Base Shape
             Capsule()
@@ -51,7 +48,7 @@ struct AddButtonView: View {
                     HStack(spacing: 20) {
                         Button {
                             withAnimation {
-                                isAddingSticky = true
+                                newObjectType = .sticky
                                 didTapAddButton = false
                             }
                         } label: {
@@ -60,7 +57,7 @@ struct AddButtonView: View {
                         
                         Button {
                             withAnimation {
-                                isAddingNotebook = true
+                                newObjectType = .notebook
                                 didTapAddButton = false
                             }
                         } label: {
@@ -69,7 +66,7 @@ struct AddButtonView: View {
                         
                         Button {
                             withAnimation {
-                                isAddingNote = true
+                                newObjectType = .note
                                 didTapAddButton = false
                             }
                         } label: {
@@ -108,5 +105,8 @@ struct AddButtonView: View {
 }
 
 #Preview {
-    AddButtonView(didTapAddButton: .constant(false), isAddingNote: .constant(false), isAddingNotebook: .constant(false), isAddingSticky: .constant(false))
+    AddButtonView(
+        didTapAddButton: .constant(false),
+        newObjectType: .constant(.note)
+    )
 }

@@ -14,6 +14,8 @@ struct HomeView: View {
     @State private var isAddingNotebook: Bool = false
     @State private var isAddingSticky: Bool = false
     
+    @State private var newObjectType: NewObjectType? = nil
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
@@ -55,9 +57,7 @@ struct HomeView: View {
                 
                 AddButtonView(
                     didTapAddButton: $didTapAddButton,
-                    isAddingNote: $isAddingNote,
-                    isAddingNotebook: $isAddingNotebook,
-                    isAddingSticky: $isAddingSticky
+                    newObjectType: $newObjectType
                 )
             }
             .toolbar {
@@ -70,6 +70,16 @@ struct HomeView: View {
                         Image(systemName: "gear")
                     }
                     .buttonStyle(PlainButtonStyle())
+                }
+            }
+            .sheet(item: $newObjectType) { object in
+                switch object {
+                case .sticky:
+                    AddStickyView()
+                case .notebook:
+                    AddNoteView()
+                case .note:
+                    AddNoteView()
                 }
             }
             .sheet(isPresented: $isAddingNote) {
