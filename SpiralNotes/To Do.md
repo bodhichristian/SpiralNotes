@@ -2,7 +2,7 @@
 
 # To Do - SpiralNotes 
 
-#  Prototype UI
+# Prototype UI
 ## Screens:
 [x] AddNoteView
 [x] AddStickyView
@@ -14,9 +14,9 @@
 
 # Adopt SwiftData
 [ ] Adopt use of @Model macro
-[ ] import SwiftData to views
+[ ] Import SwiftData to views
 
-# Implement Features
+## Implement Features
 [ ] Add/Delete Note
 [ ] Add/Delete Notebook
 [ ] Add/Delete Sticky

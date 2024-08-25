@@ -63,9 +63,9 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem {
                     NavigationLink {
-                        Text("Settings View")
+                        Text("SettingsView")
                             .font(.largeTitle)
-                            .fontWeight(.medium)
+                            .fontWeight(.black)
                     } label: {
                         Image(systemName: "gear")
                     }
