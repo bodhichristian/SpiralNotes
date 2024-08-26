@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA08E7DB2C7BD67700A5E74C /* NewObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08E7DA2C7BD67700A5E74C /* NewObjectType.swift */; };
+		AA08E7DD2C7BFF4400A5E74C /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378B2C725DE700335B42 /* AddButtonView.swift */; };
+		AA08E7DF2C7BFF9900A5E74C /* NewObjectToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08E7DE2C7BFF9900A5E74C /* NewObjectToolbar.swift */; };
 		AA4880D02C76606900FEF610 /* AddNotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880CF2C76606900FEF610 /* AddNotebookView.swift */; };
 		AA4880D22C7663BD00FEF610 /* NotebookSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */; };
 		AA4880D42C767F0900FEF610 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D32C767F0900FEF610 /* NotebookView.swift */; };
@@ -16,7 +18,6 @@
 		AA6C37842C724C9300335B42 /* StickyPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37832C724C9300335B42 /* StickyPreview.swift */; };
 		AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37852C724D4F00335B42 /* StickyContainerView.swift */; };
 		AA6C37892C72556600335B42 /* NoteStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37882C72556600335B42 /* NoteStack.swift */; };
-		AA6C378C2C725DE700335B42 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378B2C725DE700335B42 /* AddButtonView.swift */; };
 		AA6C378F2C72760100335B42 /* NotebookShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378E2C72760100335B42 /* NotebookShape.swift */; };
 		AA6C37912C72841E00335B42 /* NotebookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C37902C72841E00335B42 /* NotebookListView.swift */; };
 		AABCD3152C76C4630007591F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD3142C76C4630007591F /* HomeView.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		AA08E7DA2C7BD67700A5E74C /* NewObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectType.swift; sourceTree = "<group>"; };
+		AA08E7DE2C7BFF9900A5E74C /* NewObjectToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectToolbar.swift; sourceTree = "<group>"; };
 		AA154BBD2C76C3C60059533B /* To Do.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "To Do.md"; sourceTree = "<group>"; };
 		AA4880CF2C76606900FEF610 /* AddNotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotebookView.swift; sourceTree = "<group>"; };
 		AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookSubjectView.swift; sourceTree = "<group>"; };
@@ -85,10 +87,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA6C37812C724C5600335B42 /* Views */ = {
+		AA08E7DC2C7BFE1D00A5E74C /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				AABCD3142C76C4630007591F /* HomeView.swift */,
+				AA08E7DE2C7BFF9900A5E74C /* NewObjectToolbar.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AA6C37812C724C5600335B42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA08E7DC2C7BFE1D00A5E74C /* Home */,
 				AA6C378A2C725DC100335B42 /* Components */,
 				AA6C378D2C7275F200335B42 /* Notebook */,
 				AA6C37872C72555100335B42 /* Note */,
@@ -277,6 +288,7 @@
 				AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */,
 				AABCD3192C7789FD0007591F /* NotebookButton.swift in Sources */,
 				AABCD31B2C790EE50007591F /* AddStickyView.swift in Sources */,
+				AA08E7DF2C7BFF9900A5E74C /* NewObjectToolbar.swift in Sources */,
 				AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */,
 				AABF08C52C72B6FD00EC2595 /* NoteCardView.swift in Sources */,
 				AABCD31F2C79424C0007591F /* AddNoteView.swift in Sources */,
@@ -286,7 +298,6 @@
 				AABF08C32C72AE8300EC2595 /* NoteListView.swift in Sources */,
 				AA4880D62C76BC9800FEF610 /* AddNotebookSubjectView.swift in Sources */,
 				AA6C37912C72841E00335B42 /* NotebookListView.swift in Sources */,
-				AA6C378C2C725DE700335B42 /* AddButtonView.swift in Sources */,
 				AAC1B3C72C7291A30002F230 /* Color+String.swift in Sources */,
 				AAD6702C2C7244160030ECA6 /* Notebook.swift in Sources */,
 				AA6C37862C724D4F00335B42 /* StickyContainerView.swift in Sources */,
@@ -295,6 +306,7 @@
 				AAC1B3CB2C729ECB0002F230 /* NoteView.swift in Sources */,
 				AABCD3152C76C4630007591F /* HomeView.swift in Sources */,
 				AA08E7DB2C7BD67700A5E74C /* NewObjectType.swift in Sources */,
+				AA08E7DD2C7BFF4400A5E74C /* AddButtonView.swift in Sources */,
 				AA6C37842C724C9300335B42 /* StickyPreview.swift in Sources */,
 				AA6C37892C72556600335B42 /* NoteStack.swift in Sources */,
 				AA4880D82C76BE0F00FEF610 /* Color+PrimaryNegative.swift in Sources */,

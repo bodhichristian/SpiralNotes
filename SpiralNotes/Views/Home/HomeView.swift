@@ -13,7 +13,6 @@ struct HomeView: View {
     @State private var isAddingNote: Bool = false
     @State private var isAddingNotebook: Bool = false
     @State private var isAddingSticky: Bool = false
-    
     @State private var newObjectType: NewObjectType? = nil
     
     var body: some View {
@@ -34,38 +33,21 @@ struct HomeView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    VStack {
-                        StickyContainerView()
-                    }
-                    .navigationTitle("SpiralNotes")
-                    .frame(maxHeight: 270, alignment: .top)
+                    StickyContainerView()
+                        .frame(maxHeight: 250)
                     
                     NoteStack()
-                        .padding(.top, -20)
                 }
                 
-                Rectangle()
-                    .foregroundStyle(Color.primaryNegative(for: colorScheme).gradient)
-                    .ignoresSafeArea()
-                    .opacity(didTapAddButton ? 0.8 : 0.0)
-                    .transition(.opacity)
-                    .onTapGesture {
-                        withAnimation(.smooth) {
-                            didTapAddButton = false
-                        }
-                    }
-                
-                AddButtonView(
-                    didTapAddButton: $didTapAddButton,
+                NewObjectToolbar(
                     newObjectType: $newObjectType
                 )
             }
+            .navigationTitle("SpiralNotes")
             .toolbar {
                 ToolbarItem {
                     NavigationLink {
                         Text("SettingsView")
-                            .font(.largeTitle)
-                            .fontWeight(.black)
                     } label: {
                         Image(systemName: "gear")
                     }
@@ -77,19 +59,10 @@ struct HomeView: View {
                 case .sticky:
                     AddStickyView()
                 case .notebook:
-                    AddNoteView()
+                    AddNotebookView()
                 case .note:
                     AddNoteView()
                 }
-            }
-            .sheet(isPresented: $isAddingNote) {
-                AddNoteView()
-            }
-            .sheet(isPresented: $isAddingNotebook) {
-                AddNotebookView()
-            }
-            .sheet(isPresented: $isAddingSticky) {
-                AddStickyView()
             }
         }
     }

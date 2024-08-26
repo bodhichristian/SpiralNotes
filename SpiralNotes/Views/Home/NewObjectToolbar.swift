@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct AddButtonView: View {
-    @Binding var didTapAddButton: Bool
+struct NewObjectToolbar: View {
     @Binding var newObjectType: NewObjectType?
     @Environment(\.colorScheme) var colorScheme
+    @State private var expanded: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -18,11 +18,11 @@ struct AddButtonView: View {
                 .foregroundStyle(Color.primaryNegative(for: colorScheme).gradient)
                 .ignoresSafeArea()
                 .frame(maxHeight: .infinity)
-                .opacity(didTapAddButton ? 0.8 : 0.0)
+                .opacity(expanded ? 0.8 : 0.0)
                 .transition(.opacity)
                 .onTapGesture {
                     withAnimation(.smooth) {
-                        didTapAddButton = false
+                        expanded = false
                     }
                 }
             
@@ -45,13 +45,13 @@ struct AddButtonView: View {
                                     endPoint: .bottomLeading
                                 )
                             )
-                            .opacity(didTapAddButton ? 1.0 :  0.0)
+                            .opacity(expanded ? 1.0 :  0.0)
                     }
-                    .frame(maxWidth: didTapAddButton ? .infinity : 60 , maxHeight: 60)
+                    .frame(maxWidth: expanded ? .infinity : 60 , maxHeight: 60)
                     .padding(20)
                 
                 HStack { // Button Row
-                    if didTapAddButton {
+                    if expanded {
                         Text("New")
                             .font(.headline)
                             .foregroundStyle(.black)
@@ -66,7 +66,7 @@ struct AddButtonView: View {
                             Button {
                                 withAnimation {
                                     newObjectType = .sticky
-                                    didTapAddButton = false
+                                    expanded = false
                                 }
                             } label: {
                                 Image(systemName: "square.on.square")
@@ -75,7 +75,7 @@ struct AddButtonView: View {
                             Button {
                                 withAnimation {
                                     newObjectType = .notebook
-                                    didTapAddButton = false
+                                    expanded = false
                                 }
                             } label: {
                                 Image(systemName: "text.book.closed")
@@ -84,7 +84,7 @@ struct AddButtonView: View {
                             Button {
                                 withAnimation {
                                     newObjectType = .note
-                                    didTapAddButton = false
+                                    expanded = false
                                 }
                             } label: {
                                 Image(systemName: "note.text")
@@ -103,12 +103,12 @@ struct AddButtonView: View {
                     
                     Button {
                         withAnimation(.smooth){
-                            didTapAddButton.toggle()
+                            expanded.toggle()
                         }
                     } label: {
                         Image(systemName: "plus")
-                            .rotationEffect(didTapAddButton ? .degrees(225) : .zero)
-                            .foregroundStyle(didTapAddButton ? .black : .white)
+                            .rotationEffect(expanded ? .degrees(225) : .zero)
+                            .foregroundStyle(expanded ? .black : .white)
                     }
                 }
                 .font(.title)
@@ -122,8 +122,7 @@ struct AddButtonView: View {
 }
 
 #Preview {
-    AddButtonView(
-        didTapAddButton: .constant(false),
+    NewObjectToolbar(
         newObjectType: .constant(.note)
     )
 }
