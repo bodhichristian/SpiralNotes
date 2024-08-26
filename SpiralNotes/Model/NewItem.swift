@@ -8,9 +8,18 @@
 import Foundation
 
 enum NewItem: Identifiable {
-    case sticky, notebook, note
+    case note,
+         notebook,
+         sticky
     
     var id: Int {
         hashValue
     }
 }
+
+
+
+
+
+
+
