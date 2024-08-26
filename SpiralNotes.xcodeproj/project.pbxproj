@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA08E7DB2C7BD67700A5E74C /* NewObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08E7DA2C7BD67700A5E74C /* NewObjectType.swift */; };
-		AA08E7DD2C7BFF4400A5E74C /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C378B2C725DE700335B42 /* AddButtonView.swift */; };
 		AA08E7DF2C7BFF9900A5E74C /* NewObjectToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08E7DE2C7BFF9900A5E74C /* NewObjectToolbar.swift */; };
 		AA4880D02C76606900FEF610 /* AddNotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880CF2C76606900FEF610 /* AddNotebookView.swift */; };
 		AA4880D22C7663BD00FEF610 /* NotebookSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */; };
@@ -52,7 +51,6 @@
 		AA6C37832C724C9300335B42 /* StickyPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyPreview.swift; sourceTree = "<group>"; };
 		AA6C37852C724D4F00335B42 /* StickyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyContainerView.swift; sourceTree = "<group>"; };
 		AA6C37882C72556600335B42 /* NoteStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStack.swift; sourceTree = "<group>"; };
-		AA6C378B2C725DE700335B42 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
 		AA6C378E2C72760100335B42 /* NotebookShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookShape.swift; sourceTree = "<group>"; };
 		AA6C37902C72841E00335B42 /* NotebookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookListView.swift; sourceTree = "<group>"; };
 		AABCD3142C76C4630007591F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 		AA6C378A2C725DC100335B42 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				AA6C378B2C725DE700335B42 /* AddButtonView.swift */,
 				AABCD3182C7789FD0007591F /* NotebookButton.swift */,
 				AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */,
 				AAC1B3CC2C72A8BA0002F230 /* ToolbarButtonLabel.swift */,
@@ -306,7 +303,6 @@
 				AAC1B3CB2C729ECB0002F230 /* NoteView.swift in Sources */,
 				AABCD3152C76C4630007591F /* HomeView.swift in Sources */,
 				AA08E7DB2C7BD67700A5E74C /* NewObjectType.swift in Sources */,
-				AA08E7DD2C7BFF4400A5E74C /* AddButtonView.swift in Sources */,
 				AA6C37842C724C9300335B42 /* StickyPreview.swift in Sources */,
 				AA6C37892C72556600335B42 /* NoteStack.swift in Sources */,
 				AA4880D82C76BE0F00FEF610 /* Color+PrimaryNegative.swift in Sources */,

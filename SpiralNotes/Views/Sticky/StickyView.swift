@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StickyView: View {
     @Bindable var sticky: Sticky
+    @FocusState private var isEditingContent
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
@@ -34,6 +35,7 @@ struct StickyView: View {
                         .font(.subheadline)
                         .foregroundStyle(.black)
                         .padding(-4)
+                        .focused($isEditingContent)
                 }
                 .frame(
                     maxWidth: .infinity,
