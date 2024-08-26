@@ -35,7 +35,7 @@ struct HomeView: View {
                     NoteStack()
                 }
                 
-                NewObjectToolbar(
+                NewItemToolbar(
                     newObjectType: $newItem
                 )
             }

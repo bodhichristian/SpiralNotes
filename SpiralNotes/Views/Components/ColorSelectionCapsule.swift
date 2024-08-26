@@ -8,17 +8,12 @@
 import SwiftUI
 
 struct ColorSelectionCapsule: View {
-    @Binding var colorName: String
+    @Binding var selectedColor: Color
     @Environment(\.colorScheme) var colorScheme
     @Namespace private var namespace
     
-    let colorNames = [
-        "red",
-        "blue",
-        "purple",
-        "yellow",
-        "orange",
-        "green"
+    let colors: [Color] = [
+        .red, .yellow, .orange, .green, .blue, .purple
     ]
     
     var body: some View {
@@ -29,14 +24,14 @@ struct ColorSelectionCapsule: View {
                 ForEach(0..<6) { i in
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)){
-                            colorName = colorNames[i]
+                            selectedColor = colors[i]
                         }
                     } label:{
                         ZStack {
                             Circle()
-                                .foregroundStyle(Color(colorName: colorNames[i])!)
+                                .foregroundStyle(colors[i])
                             
-                            if colorNames[i] == colorName {
+                            if selectedColor == colors[i] {
                                 Circle()
                                     .stroke(Color.primary, lineWidth: 2)
                                     .matchedGeometryEffect(id: "selectedColor", in: namespace)
@@ -52,5 +47,5 @@ struct ColorSelectionCapsule: View {
 }
 
 #Preview {
-    ColorSelectionCapsule(colorName: .constant(Notebook.mockData[3].color))
+    ColorSelectionCapsule(colorName: .constant(.blue))
 }
