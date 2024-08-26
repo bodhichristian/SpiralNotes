@@ -7,11 +7,10 @@
 
 import Foundation
 
-enum NewObjectType: Identifiable {
+enum NewItem: Identifiable {
     case sticky, notebook, note
     
     var id: Int {
         hashValue
     }
-    
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA08E7DB2C7BD67700A5E74C /* NewObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08E7DA2C7BD67700A5E74C /* NewObjectType.swift */; };
+		AA08E7DB2C7BD67700A5E74C /* NewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08E7DA2C7BD67700A5E74C /* NewItem.swift */; };
 		AA08E7DF2C7BFF9900A5E74C /* NewObjectToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08E7DE2C7BFF9900A5E74C /* NewObjectToolbar.swift */; };
 		AA4880D02C76606900FEF610 /* AddNotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880CF2C76606900FEF610 /* AddNotebookView.swift */; };
 		AA4880D22C7663BD00FEF610 /* NotebookSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */; };
@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA08E7DA2C7BD67700A5E74C /* NewObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectType.swift; sourceTree = "<group>"; };
+		AA08E7DA2C7BD67700A5E74C /* NewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItem.swift; sourceTree = "<group>"; };
 		AA08E7DE2C7BFF9900A5E74C /* NewObjectToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectToolbar.swift; sourceTree = "<group>"; };
 		AA154BBD2C76C3C60059533B /* To Do.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "To Do.md"; sourceTree = "<group>"; };
 		AA4880CF2C76606900FEF610 /* AddNotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotebookView.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		AAD670282C7242720030ECA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AA08E7DA2C7BD67700A5E74C /* NewObjectType.swift */,
+				AA08E7DA2C7BD67700A5E74C /* NewItem.swift */,
 				AAD6702B2C7244160030ECA6 /* Notebook.swift */,
 				AAD6702D2C7244690030ECA6 /* Notes.swift */,
 				AAD670292C7242A00030ECA6 /* Sticky.swift */,
@@ -302,7 +302,7 @@
 				AAD6702A2C7242A00030ECA6 /* Sticky.swift in Sources */,
 				AAC1B3CB2C729ECB0002F230 /* NoteView.swift in Sources */,
 				AABCD3152C76C4630007591F /* HomeView.swift in Sources */,
-				AA08E7DB2C7BD67700A5E74C /* NewObjectType.swift in Sources */,
+				AA08E7DB2C7BD67700A5E74C /* NewItem.swift in Sources */,
 				AA6C37842C724C9300335B42 /* StickyPreview.swift in Sources */,
 				AA6C37892C72556600335B42 /* NoteStack.swift in Sources */,
 				AA4880D82C76BE0F00FEF610 /* Color+PrimaryNegative.swift in Sources */,

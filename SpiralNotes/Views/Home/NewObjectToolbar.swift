@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewObjectToolbar: View {
-    @Binding var newObjectType: NewObjectType?
+    @Binding var newObjectType: NewItem?
     @Environment(\.colorScheme) var colorScheme
     @State private var expanded: Bool = false
     

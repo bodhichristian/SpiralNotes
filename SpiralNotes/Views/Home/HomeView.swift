@@ -9,11 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
-    @State private var didTapAddButton: Bool = false
-    @State private var isAddingNote: Bool = false
-    @State private var isAddingNotebook: Bool = false
-    @State private var isAddingSticky: Bool = false
-    @State private var newObjectType: NewObjectType? = nil
+    @State private var newItem: NewItem? = nil
     
     var body: some View {
         NavigationStack {
@@ -40,7 +36,7 @@ struct HomeView: View {
                 }
                 
                 NewObjectToolbar(
-                    newObjectType: $newObjectType
+                    newObjectType: $newItem
                 )
             }
             .navigationTitle("SpiralNotes")
@@ -54,13 +50,13 @@ struct HomeView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
             }
-            .sheet(item: $newObjectType) { object in
-                switch object {
+            .sheet(item: $newItem) { item in
+                switch item {
                 case .sticky:
                     AddStickyView()
                 case .notebook:
                     AddNotebookView()
-                case .note:
+                default:
                     AddNoteView()
                 }
             }
