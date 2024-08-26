@@ -25,7 +25,6 @@ struct NoteListView: View {
             .padding()
         }
         .background {
-            
             Rectangle()
                 .foregroundStyle(
                     LinearGradient(
@@ -40,7 +39,6 @@ struct NoteListView: View {
                     )
                 )
                 .ignoresSafeArea()
-            
         }
         .navigationTitle(notebook.subject)
         .toolbar {

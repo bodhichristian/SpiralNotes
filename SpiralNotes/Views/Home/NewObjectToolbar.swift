@@ -99,7 +99,7 @@ struct NewObjectToolbar: View {
                                 removal: .blurReplace
                             )
                         )
-                    }
+                    } // end if
                     
                     Button {
                         withAnimation(.smooth){
@@ -115,7 +115,6 @@ struct NewObjectToolbar: View {
                 .fontWeight(.medium)
                 .frame(alignment: .trailing)
                 .padding(40)
-                
             }
         }
     }

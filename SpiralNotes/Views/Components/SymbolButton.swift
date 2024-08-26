@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct NotebookButton: View {
+struct SymbolButton: View {
     @Environment(\.colorScheme) var colorScheme
     
     let symbolName: String
     let action: () -> ()
     
     var body: some View {
-        
         Button {
             action()
         } label: {
@@ -24,11 +23,10 @@ struct NotebookButton: View {
         }
         .buttonStyle(PlainButtonStyle())
     }
-    
 }
 
 #Preview {
-    NotebookButton(symbolName: "trash.circle.fill") {
+    SymbolButton(symbolName: "trash.circle.fill") {
         // do something
     }
 }

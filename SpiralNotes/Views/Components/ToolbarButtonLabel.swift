@@ -24,7 +24,6 @@ struct ToolbarButtonLabel: View {
     var body: some View {
         HStack {
             Text(text)
-           // Spacer()
             
             Image(systemName: symbol)
         }

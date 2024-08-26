@@ -25,7 +25,6 @@ struct NoteStack: View {
             
             Section("Pinned Notebooks") {
                 ForEach(Notebook.mockData) { notebook in
-                    
                     NavigationLink {
                         NoteListView(notebook: notebook)
                     } label: {

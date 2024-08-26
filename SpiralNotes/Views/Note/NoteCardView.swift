@@ -41,12 +41,11 @@ struct NoteCardView: View {
         ZStack {
             // Base layer
             RoundedRectangle(cornerRadius: 10)
-            
                 .foregroundStyle(textColor)
                 .shadow(radius: 2, y: 2)
+            
             // Card Content
             VStack(alignment: .leading, spacing: 0) {
-                
                 // Header
                 HStack {
                     Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
@@ -57,9 +56,7 @@ struct NoteCardView: View {
                     Spacer()
                     
                     Image(systemName: "ellipsis.circle")
-                    
                 }
-                //.foregroundStyle(textColor)
                 .padding(.horizontal)
                 .padding(.vertical, 12)
                 .background {
@@ -72,11 +69,9 @@ struct NoteCardView: View {
                         ),
                         style: .continuous
                     )
-                    
                     .foregroundStyle(Color(colorName: notebook.color)!.opacity(0.5)
                     )
                 }
-                
                 
                 Text(note.content ?? "")
                     .padding(.horizontal)
@@ -105,7 +100,6 @@ struct NoteCardView: View {
                             )
                         )
                     }
-                
             }
         }
         .frame(maxWidth: .infinity, maxHeight: 200, alignment: .topLeading)

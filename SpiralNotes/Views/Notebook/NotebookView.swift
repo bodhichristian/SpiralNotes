@@ -15,7 +15,6 @@ struct NotebookView: View {
         ZStack {
             NotebookShape(colorName: notebook.color)
             NotebookSubjectView(subject: notebook.subject)
-            
         }
     }
 }

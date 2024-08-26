@@ -20,7 +20,7 @@ struct ColorSelectionCapsule: View {
         "orange",
         "green"
     ]
-
+    
     var body: some View {
         ZStack {
             Capsule()
@@ -31,16 +31,15 @@ struct ColorSelectionCapsule: View {
                         withAnimation(.easeInOut(duration: 0.2)){
                             colorName = colorNames[i]
                         }
-
-                    }label:{
+                    } label:{
                         ZStack {
                             Circle()
                                 .foregroundStyle(Color(colorName: colorNames[i])!)
-                               
+                            
                             if colorNames[i] == colorName {
                                 Circle()
-                                .stroke(Color.primary, lineWidth: 2)
-                                .matchedGeometryEffect(id: "selectedColor", in: namespace)
+                                    .stroke(Color.primary, lineWidth: 2)
+                                    .matchedGeometryEffect(id: "selectedColor", in: namespace)
                             }
                         }
                     }

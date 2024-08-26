@@ -30,13 +30,13 @@ struct AddNotebookView: View {
                          
                         }
                     HStack(alignment: .bottom) {
-                        NotebookButton(symbolName: "trash.circle.fill") {
+                        SymbolButton(symbolName: "trash.circle.fill") {
                             dismiss()
                         }
                         
                         ColorSelectionCapsule(colorName: $colorName)
 
-                        NotebookButton(symbolName: "checkmark.circle.fill") {
+                        SymbolButton(symbolName: "checkmark.circle.fill") {
                             
                         }
                     }

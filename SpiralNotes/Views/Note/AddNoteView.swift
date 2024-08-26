@@ -31,68 +31,52 @@ struct AddNoteView: View {
             .ignoresSafeArea()
             VStack {
                 ZStack {
-                    // Note Contents
-                    
-                        VStack(alignment: .leading, spacing: 0) {
-                            TextField("Note Title", text: $noteTitle)
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .foregroundStyle(.primary)
-                                .padding(.leading)
-                                .padding(.top, 40)
-                                .onTapGesture {
-                                    withAnimation {
-                                        didEditNote = true
-                                    }
+                    VStack(alignment: .leading, spacing: 0) {
+                        TextField("Note Title", text: $noteTitle)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.primary)
+                            .padding(.leading)
+                            .padding(.top, 40)
+                            .onTapGesture {
+                                withAnimation {
+                                    didEditNote = true
                                 }
-                            
-                            TextEditor(text: $noteContent)
-                                .textEditorStyle(.plain)
-                                .focused($isEditingNote)
-                                .padding(.horizontal)
-                                .onAppear {
-                                    isEditingNote = true
-                                }
-                                .onTapGesture {
-                                    withAnimation {
-                                        didEditNote = true
-                                    }
-                                }
-                                
-                        }
-                        .frame(maxHeight: .infinity, alignment: .top)
+                            }
                         
-                    
+                        TextEditor(text: $noteContent)
+                            .textEditorStyle(.plain)
+                            .focused($isEditingNote)
+                            .padding(.horizontal)
+                            .onAppear {
+                                isEditingNote = true
+                            }
+                            .onTapGesture {
+                                withAnimation {
+                                    didEditNote = true
+                                }
+                            }
+                    }
+                    .frame(maxHeight: .infinity, alignment: .top)
                     
                     HStack(alignment: .bottom) {
-                        NotebookButton(symbolName: "trash.circle.fill") {
+                        SymbolButton(symbolName: "trash.circle.fill") {
                             dismiss()
                         }
                         
                         ColorSelectionCapsule(colorName: $noteColor)
-                            
                         
-                        NotebookButton(symbolName: "checkmark.circle.fill") {
-                            
+                        SymbolButton(symbolName: "checkmark.circle.fill") {
+                            // save note
                         }
                     }
                     .font(.largeTitle)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .padding(.bottom)
                 }
-                //.clipShape(RoundedRectangle(cornerRadius: 10))
-                //.frame(maxWidth: .infinity, maxHeight: 400)
                 .padding(.horizontal)
-                
-//                if !didEditNote{
-//                    Text("\(Text("Thoughts").foregroundStyle(Color(colorName: noteColor)!)): e n d l e s s")
-//                        .font(.title3)
-//                        .fontWeight(.medium)
-//                }
             }
-            
         }
-        
     }
 }
 

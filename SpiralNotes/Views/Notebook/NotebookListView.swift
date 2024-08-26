@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NotebookListView: View {
-    
     @State private var isAddingNotebook = false
     
     var body: some View {
@@ -35,9 +34,10 @@ struct NotebookListView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
+                
                 ToolbarItem {
                     Button {
-                       isAddingNotebook = true
+                        isAddingNotebook = true
                     } label: {
                         ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
                     }
@@ -45,7 +45,7 @@ struct NotebookListView: View {
                 }
             }
             .sheet(isPresented: $isAddingNotebook) {
-                 AddNotebookView()
+                AddNotebookView()
             }
         }
     }

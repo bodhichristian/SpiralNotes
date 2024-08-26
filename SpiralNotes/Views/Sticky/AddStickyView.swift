@@ -20,7 +20,6 @@ struct AddStickyView: View {
     
     var body: some View {
         VStack(spacing: 40) {
-            
             if !didEditSticky {
                 Text("\(Text("Title").foregroundStyle(Color(colorName: stickyColor)!)) and \(Text("date").foregroundStyle(Color(colorName: stickyColor)!)) optional")
                     .font(.title3)
@@ -28,7 +27,6 @@ struct AddStickyView: View {
             }
             
             ZStack(alignment: .bottom) {
-                
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundStyle(Color(colorName: stickyColor)!.gradient)
                     .frame(maxWidth: 300, maxHeight: 300)
@@ -82,13 +80,13 @@ struct AddStickyView: View {
                     }
                 
                 HStack(alignment: .bottom) {
-                    NotebookButton(symbolName: "trash.circle.fill") {
+                    SymbolButton(symbolName: "trash.circle.fill") {
                         dismiss()
                     }
                     
                     ColorSelectionCapsule(colorName: $stickyColor)
                 
-                    NotebookButton(symbolName: "checkmark.circle.fill") {
+                    SymbolButton(symbolName: "checkmark.circle.fill") {
                         // Save notebook
                     }
                 }

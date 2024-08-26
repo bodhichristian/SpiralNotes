@@ -27,9 +27,6 @@ struct NotebookShape: View {
                 .foregroundStyle(.white)
                 .padding(20)
             
-        //    NotebookSubjectView(subject: notebook.subject)
-            
-            
             // Spirals
             VStack {
                 ForEach(0..<6) { _ in

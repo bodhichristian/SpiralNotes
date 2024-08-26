@@ -39,19 +39,18 @@ struct StickyView: View {
                         .overlay {
                             if isEditingContent {
                                 HStack(alignment: .bottom) {
-                                    NotebookButton(symbolName: "trash.circle.fill") {
+                                    SymbolButton(symbolName: "trash.circle.fill") {
                                         // delete sticky
                                     }
                                     
                                     ColorSelectionCapsule(colorName: $sticky.color)
-
-                                    NotebookButton(symbolName: "checkmark.circle.fill") {
+                                    
+                                    SymbolButton(symbolName: "checkmark.circle.fill") {
                                         
                                     }
                                 }
                                 .font(.largeTitle)
                                 .frame(maxHeight: .infinity, alignment: .bottom)
-                                .padding(.bottom, 8)
                             }
                         }
                 }
