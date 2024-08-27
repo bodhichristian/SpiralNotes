@@ -47,5 +47,5 @@ struct ColorSelectionCapsule: View {
 }
 
 #Preview {
-    ColorSelectionCapsule(colorName: .constant(.blue))
+    ColorSelectionCapsule(selectedColor: .constant(.blue))
 }

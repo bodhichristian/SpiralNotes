@@ -30,12 +30,13 @@
 		AAC1B3C72C7291A30002F230 /* Color+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1B3C62C7291A30002F230 /* Color+String.swift */; };
 		AAC1B3CB2C729ECB0002F230 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1B3CA2C729ECB0002F230 /* NoteView.swift */; };
 		AAC1B3CD2C72A8BA0002F230 /* ToolbarButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1B3CC2C72A8BA0002F230 /* ToolbarButtonLabel.swift */; };
+		AAD3B3DB2C7D6A4A00045B26 /* SNStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3B3DA2C7D6A4A00045B26 /* SNStyle.swift */; };
 		AAD6701B2C723D010030ECA6 /* SpiralNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */; };
 		AAD6701F2C723D030030ECA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD6701E2C723D030030ECA6 /* Assets.xcassets */; };
 		AAD670222C723D030030ECA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD670212C723D030030ECA6 /* Preview Assets.xcassets */; };
 		AAD6702A2C7242A00030ECA6 /* Sticky.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD670292C7242A00030ECA6 /* Sticky.swift */; };
 		AAD6702C2C7244160030ECA6 /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6702B2C7244160030ECA6 /* Notebook.swift */; };
-		AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6702D2C7244690030ECA6 /* Notes.swift */; };
+		AAD6702E2C7244690030ECA6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6702D2C7244690030ECA6 /* Note.swift */; };
 		AAF83FB42C741B5200BFB970 /* SortButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,13 +65,14 @@
 		AAC1B3C62C7291A30002F230 /* Color+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+String.swift"; sourceTree = "<group>"; };
 		AAC1B3CA2C729ECB0002F230 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		AAC1B3CC2C72A8BA0002F230 /* ToolbarButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonLabel.swift; sourceTree = "<group>"; };
+		AAD3B3DA2C7D6A4A00045B26 /* SNStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNStyle.swift; sourceTree = "<group>"; };
 		AAD670172C723D010030ECA6 /* SpiralNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiralNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD6701A2C723D010030ECA6 /* SpiralNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralNotesApp.swift; sourceTree = "<group>"; };
 		AAD6701E2C723D030030ECA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAD670212C723D030030ECA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AAD670292C7242A00030ECA6 /* Sticky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticky.swift; sourceTree = "<group>"; };
 		AAD6702B2C7244160030ECA6 /* Notebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
-		AAD6702D2C7244690030ECA6 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		AAD6702D2C7244690030ECA6 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortButtonLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,8 +207,9 @@
 			children = (
 				AA08E7DA2C7BD67700A5E74C /* NewItem.swift */,
 				AAD6702B2C7244160030ECA6 /* Notebook.swift */,
-				AAD6702D2C7244690030ECA6 /* Notes.swift */,
+				AAD6702D2C7244690030ECA6 /* Note.swift */,
 				AAD670292C7242A00030ECA6 /* Sticky.swift */,
+				AAD3B3DA2C7D6A4A00045B26 /* SNStyle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC1B3CD2C72A8BA0002F230 /* ToolbarButtonLabel.swift in Sources */,
-				AAD6702E2C7244690030ECA6 /* Notes.swift in Sources */,
+				AAD6702E2C7244690030ECA6 /* Note.swift in Sources */,
 				AABCD3192C7789FD0007591F /* SymbolButton.swift in Sources */,
 				AABCD31B2C790EE50007591F /* AddStickyView.swift in Sources */,
 				AA08E7DF2C7BFF9900A5E74C /* NewItemToolbar.swift in Sources */,
@@ -308,6 +311,7 @@
 				AA4880D82C76BE0F00FEF610 /* Color+PrimaryNegative.swift in Sources */,
 				AAF83FB42C741B5200BFB970 /* SortButtonLabel.swift in Sources */,
 				AA4880D02C76606900FEF610 /* AddNotebookView.swift in Sources */,
+				AAD3B3DB2C7D6A4A00045B26 /* SNStyle.swift in Sources */,
 				AABCD31D2C7916EA0007591F /* StickyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
