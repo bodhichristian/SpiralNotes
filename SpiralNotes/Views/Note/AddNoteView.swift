@@ -11,28 +11,18 @@ import SwiftUI
 struct AddNoteView: View {
     @Environment(\.dismiss) private var dismiss
     @FocusState private var isEditingNote: Bool
-    @State private var noteContent: String = ""
-    @State private var noteTitle: String = ""
-    @State private var noteColor: String = "blue"
+    @State private var noteColor: Color = .blue
     @State private var didEditNote: Bool = false
+    @State private var newNote: Note = Note()
     
     var body: some View {
         ZStack {
-            LinearGradient(
-                colors: [
-                    Color(colorName: noteColor)!.opacity(0.1),
-                    Color(colorName: noteColor)!.opacity(0.1),
-                    Color(colorName: noteColor)!.opacity(0.2),
-                    Color(colorName: noteColor)!.opacity(0.3)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            SNStyle.noteBackgroundGradient(for: newNote)
             .ignoresSafeArea()
             VStack {
                 ZStack {
                     VStack(alignment: .leading, spacing: 0) {
-                        TextField("Note Title", text: $noteTitle)
+                        TextField("Note Title", text: $newNote.title)
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundStyle(.primary)
@@ -44,7 +34,7 @@ struct AddNoteView: View {
                                 }
                             }
                         
-                        TextEditor(text: $noteContent)
+                        TextEditor(text: $newNote.content)
                             .textEditorStyle(.plain)
                             .focused($isEditingNote)
                             .padding(.horizontal)
@@ -64,7 +54,7 @@ struct AddNoteView: View {
                             dismiss()
                         }
                         
-                        ColorSelectionCapsule(colorName: $noteColor)
+                        ColorSelectionCapsule(selectedColor: $noteColor)
                         
                         SymbolButton(symbolName: "checkmark.circle.fill") {
                             // save note

@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AddStickyView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var newSticky = Sticky(title: "New Sticky", content: "Write here...", color: "yellow")
+    @State private var newSticky = Sticky(title: "New Sticky", content: "Write here...", color: .yellow)
     
-    @State private var stickyColor = "green"
+    @State private var stickyColor = Color.green
     @State private var includingDate = true
     @State private var newStickyTitle = ""
     @State private var didEditSticky: Bool = false
@@ -21,14 +21,14 @@ struct AddStickyView: View {
     var body: some View {
         VStack(spacing: 40) {
             if !didEditSticky {
-                Text("\(Text("Title").foregroundStyle(Color(colorName: stickyColor)!)) and \(Text("date").foregroundStyle(Color(colorName: stickyColor)!)) optional")
+                Text("\(Text("Title").foregroundStyle(stickyColor)) and \(Text("date").foregroundStyle(stickyColor)) optional")
                     .font(.title3)
                     .fontWeight(.medium)
             }
             
             ZStack(alignment: .bottom) {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundStyle(Color(colorName: stickyColor)!.gradient)
+                    .foregroundStyle(stickyColor.gradient)
                     .frame(maxWidth: 300, maxHeight: 300)
                     .shadow(radius: 4, y: 4)
                     .overlay {
@@ -84,7 +84,7 @@ struct AddStickyView: View {
                         dismiss()
                     }
                     
-                    ColorSelectionCapsule(colorName: $stickyColor)
+                    ColorSelectionCapsule(selectedColor: $stickyColor)
                 
                     SymbolButton(symbolName: "checkmark.circle.fill") {
                         // Save notebook
@@ -95,7 +95,7 @@ struct AddStickyView: View {
             }
             
             if !didEditSticky {
-                Text("Stickiness \(Text("mandatory").foregroundStyle(Color(colorName: stickyColor)!))")
+                Text("Stickiness \(Text("mandatory").foregroundStyle(stickyColor))")
                     .font(.title3)
                     .fontWeight(.medium)
             }

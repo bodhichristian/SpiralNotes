@@ -27,17 +27,7 @@ struct NoteListView: View {
         .background {
             Rectangle()
                 .foregroundStyle(
-                    LinearGradient(
-                        colors: [
-                            Color(colorName: notebook.color)!.opacity(0.1),
-                            Color(colorName: notebook.color)!.opacity(0.1),
-                            Color(colorName: notebook.color)!.opacity(0.4),
-                            Color(colorName: notebook.color)!.opacity(0.8)
-                        ],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
+                    SNStyle.noteListBackgroundGradient(for: notebook))
                 .ignoresSafeArea()
         }
         .navigationTitle(notebook.subject)

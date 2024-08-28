@@ -30,7 +30,7 @@ struct NoteStack: View {
                     } label: {
                         HStack {
                             Image(systemName: "text.book.closed.fill")
-                                .foregroundStyle(Color(colorName: notebook.color)!.gradient)
+                                .foregroundStyle(notebook.color.gradient)
                                 .fontWeight(.bold)
                             Text(notebook.subject)
                         }
@@ -46,7 +46,10 @@ struct NoteStack: View {
                         HStack {
                             Image(systemName: "note.text")
                                 .foregroundStyle(.purple.gradient)
-                            Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
+                            // Display note date when no title exists
+                            Text(note.title.isEmpty 
+                                 ? note.dateCreated.formatted(date: .numeric, time: .omitted)
+                                 : note.title)
                             Spacer()
                         }
                     }

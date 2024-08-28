@@ -11,15 +11,15 @@ import Foundation
 class Note: Identifiable {
     var id: UUID
     var dateCreated: Date
-    var title: String?
-    var content: String?
+    var title: String
+    var content: String
     var notebook: Notebook?
     
     init(
         id: UUID = UUID(),
         dateCreated: Date = .now,
-        title: String? = nil,
-        content: String? = nil,
+        title: String = "",
+        content: String = "",
         notebook: Notebook? = nil
     ) {
         self.id = id

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class Sticky: Identifiable {
@@ -13,14 +14,14 @@ class Sticky: Identifiable {
     var dateCreated: Date
     var title: String
     var content: String
-    var color: String
+    var color: Color
     
     init(
         id: UUID = UUID(),
         dateCreated: Foundation.Date = Date.now,
         title: String = "",
         content: String,
-        color: String = "yellow"
+        color: Color = .yellow
     ) {
         self.id = id
         self.dateCreated = dateCreated

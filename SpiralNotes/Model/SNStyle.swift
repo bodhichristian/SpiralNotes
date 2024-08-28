@@ -21,4 +21,56 @@ struct SNStyle {
         .blue.opacity(0.9),
         .purple.opacity(0.9)
     ]
+    
+    static func noteBackgroundGradient(for note: Note) -> LinearGradient {
+        if let color = note.notebook?.color {
+            return LinearGradient(
+                colors: [
+                    color.opacity(0.1),
+                    color.opacity(0.1),
+                    color.opacity(0.2),
+                    color.opacity(0.3)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        } else {
+            return LinearGradient(
+                colors: [
+                    .blue.opacity(0.1),
+                    .blue.opacity(0.1),
+                    .blue.opacity(0.2),
+                    .blue.opacity(0.3)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        }
+    }
+    
+    static func noteCardGradient(for notebook: Notebook) -> LinearGradient {
+        let color = notebook.color
+        
+        return LinearGradient(
+            colors: [color.opacity(1.0),
+                     color.opacity(0.0)],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+    
+    static func noteListBackgroundGradient(for notebook: Notebook) -> LinearGradient {
+        let color = notebook.color
+        
+        return LinearGradient(
+            colors: [
+                color.opacity(0.1),
+                color.opacity(0.1),
+                color.opacity(0.4),
+                color.opacity(0.8)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
 }

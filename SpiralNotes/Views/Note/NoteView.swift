@@ -17,16 +17,7 @@ struct NoteView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            LinearGradient(
-                colors: [
-                    Color(colorName: notebook.color)!.opacity(0.1),
-                    Color(colorName: notebook.color)!.opacity(0.1),
-                    Color(colorName: notebook.color)!.opacity(0.2),
-                    Color(colorName: notebook.color)!.opacity(0.3)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            SNStyle.noteBackgroundGradient(for: note)
             .ignoresSafeArea()
             
             // Note Contents
@@ -39,9 +30,9 @@ struct NoteView: View {
                         .padding(.leading)
                         
                     TextEditor(text: $noteContent)
-                        .onAppear {
-                            noteContent = note.content ?? ""
-                        }
+//                        .onAppear {
+//                            noteContent = note.content ?? ""
+//                        }
                         .textEditorStyle(.plain)
                         .focused($isEditingNote)                    
                         .padding()
@@ -68,7 +59,7 @@ struct NoteView: View {
             }
             .buttonStyle(PlainButtonStyle())
         }
-        .navigationTitle(note.title ?? "")
+        .navigationTitle(note.title)
         .toolbar {
             ToolbarItem {
                 Button {

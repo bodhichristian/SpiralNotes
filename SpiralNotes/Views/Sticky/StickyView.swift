@@ -13,7 +13,7 @@ struct StickyView: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .foregroundStyle(Color(colorName: sticky.color)!.gradient)
+            .foregroundStyle(sticky.color.gradient)
             .frame(maxWidth: 320, maxHeight: 320)
             .shadow(radius: 4, y: 4)
             .overlay {
@@ -43,7 +43,7 @@ struct StickyView: View {
                                         // delete sticky
                                     }
                                     
-                                    ColorSelectionCapsule(colorName: $sticky.color)
+                                    ColorSelectionCapsule(selectedColor: $sticky.color)
                                     
                                     SymbolButton(symbolName: "checkmark.circle.fill") {
                                         
