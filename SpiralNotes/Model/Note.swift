@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class Note: Identifiable {
@@ -14,19 +15,22 @@ class Note: Identifiable {
     var title: String
     var content: String
     var notebook: Notebook?
+    var color: Color?
     
     init(
         id: UUID = UUID(),
         dateCreated: Date = .now,
         title: String = "",
         content: String = "",
-        notebook: Notebook? = nil
+        notebook: Notebook? = nil,
+        color: Color? = nil
     ) {
         self.id = id
         self.dateCreated = dateCreated
         self.title = title
         self.content = content
         self.notebook = notebook
+        self.color = color
     }
     
     static var mockData: [Note] = [
