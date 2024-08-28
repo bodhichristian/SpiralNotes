@@ -13,7 +13,7 @@ struct SNStyle {
         .pink, .orange, .yellow, .green, .blue, .purple
     ]
     
-    static let noteBookColors: [Color] = [
+    static let notebookColors: [Color] = [
         .red.opacity(0.9),
         .orange.opacity(0.9),
         .yellow.opacity(0.9),
@@ -22,30 +22,18 @@ struct SNStyle {
         .purple.opacity(0.9)
     ]
     
-    static func noteBackgroundGradient(for note: Note) -> LinearGradient {
-        if let color = note.notebook?.color {
-            return LinearGradient(
-                colors: [
-                    color.opacity(0.1),
-                    color.opacity(0.1),
-                    color.opacity(0.2),
-                    color.opacity(0.3)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        } else {
-            return LinearGradient(
-                colors: [
-                    .blue.opacity(0.1),
-                    .blue.opacity(0.1),
-                    .blue.opacity(0.2),
-                    .blue.opacity(0.3)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        }
+    static func noteBackgroundGradient(for color: Color) -> LinearGradient {
+        LinearGradient(
+            colors: [
+                color.opacity(0.1),
+                color.opacity(0.1),
+                color.opacity(0.2),
+                color.opacity(0.3)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        
     }
     
     static func noteCardGradient(for notebook: Notebook) -> LinearGradient {

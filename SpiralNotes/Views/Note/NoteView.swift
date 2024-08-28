@@ -10,14 +10,13 @@ import SwiftUI
 
 struct NoteView: View {
     let note: Note
-    let notebook: Notebook
     
     @FocusState private var isEditingNote: Bool
     @State private var noteContent: String = ""
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            SNStyle.noteBackgroundGradient(for: note)
+            SNStyle.noteBackgroundGradient(for: note.color)
             .ignoresSafeArea()
             
             // Note Contents
@@ -30,9 +29,6 @@ struct NoteView: View {
                         .padding(.leading)
                         
                     TextEditor(text: $noteContent)
-//                        .onAppear {
-//                            noteContent = note.content ?? ""
-//                        }
                         .textEditorStyle(.plain)
                         .focused($isEditingNote)                    
                         .padding()
@@ -75,6 +71,6 @@ struct NoteView: View {
 
 #Preview {
     NavigationStack {
-        NoteView(note: Note.mockData[0], notebook: Notebook.mockData[3])
+        NoteView(note: Note.mockData[0])
     }
 }

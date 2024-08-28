@@ -15,9 +15,9 @@ struct NoteListView: View {
             LazyVStack(spacing: 10) {
                 ForEach(notebook.notes){ note in
                     NavigationLink {
-                        NoteView(note: note, notebook: notebook)
+                        NoteView(note: note)
                     }label:{
-                        NoteCardView(note: note, notebook: notebook)
+                        NoteCardView(note: note)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }

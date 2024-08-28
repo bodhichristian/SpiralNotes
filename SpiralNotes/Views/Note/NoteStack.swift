@@ -41,7 +41,7 @@ struct NoteStack: View {
             Section("Loose notes") {
                 ForEach(Note.mockData) { note in
                     NavigationLink {
-                        NoteView(note: note, notebook: Notebook.mockData.randomElement()!)
+                        NoteView(note: note)
                     } label: {
                         HStack {
                             Image(systemName: "note.text")

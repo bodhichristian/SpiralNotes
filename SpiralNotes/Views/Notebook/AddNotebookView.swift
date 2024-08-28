@@ -12,7 +12,7 @@ struct AddNotebookView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var subject: String = "Subject"
-    @State private var selectedColor: Color = SNStyle.noteBookColors.randomElement()!
+    @State private var selectedColor: Color = SNStyle.notebookColors.randomElement()!
     @State private var didEditSubject: Bool = false
 
     var body: some View {

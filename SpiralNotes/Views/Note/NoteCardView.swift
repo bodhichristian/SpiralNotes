@@ -11,7 +11,6 @@ struct NoteCardView: View {
     @Environment(\.colorScheme) var colorScheme
     
     let note: Note
-    let notebook: Notebook
     
     private var textColor: Color {
         if colorScheme == .dark{
@@ -38,7 +37,6 @@ struct NoteCardView: View {
                         .font(.title3)
                         .fontWeight(.semibold)
                     
-                    
                     Spacer()
                     
                     Image(systemName: "ellipsis.circle")
@@ -55,7 +53,7 @@ struct NoteCardView: View {
                         ),
                         style: .continuous
                     )
-                    .foregroundStyle(note.notebook?.color ?? .blue).opacity(0.5)
+                    .foregroundStyle(note.notebook?.color ?? note.color).opacity(0.5)
                 }
                 
                 Text(note.content)
@@ -73,7 +71,7 @@ struct NoteCardView: View {
                             style: .continuous
                         )
                         .foregroundStyle(
-                            SNStyle.noteBackgroundGradient(for: note)
+                            SNStyle.noteBackgroundGradient(for: note.color)
                         )
                     }
             }
@@ -84,9 +82,9 @@ struct NoteCardView: View {
 
 #Preview {
     VStack {
-        NoteCardView(note: Note.mockData[2], notebook: Notebook.mockData[0])
-        NoteCardView(note: Note.mockData[1], notebook: Notebook.mockData[1])
-        NoteCardView(note: Note.mockData[3], notebook: Notebook.mockData[2])
+        NoteCardView(note: Note.mockData[2])
+        NoteCardView(note: Note.mockData[1])
+        NoteCardView(note: Note.mockData[3])
     }
     .padding()
 }

@@ -28,9 +28,15 @@ class Notebook: Identifiable {
     }
     
     static let mockData: [Notebook] = [
-        Notebook(subject: "Social Studies", notes: Note.mockData, color: .yellow),
-        Notebook(subject: "English", notes: Note.mockData, color: .blue),
-        Notebook(subject: "Math", notes: Note.mockData, color: .red),
-        Notebook(subject: "Science", notes: Note.mockData, color: .green)
+        Notebook(subject: "Math", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Science", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "History", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Literature", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Art", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Music", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Physical Education", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Computer Science", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Languages", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
+        Notebook(subject: "Economics", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!)
     ]
 }

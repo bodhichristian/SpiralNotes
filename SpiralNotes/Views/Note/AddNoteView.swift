@@ -11,18 +11,19 @@ import SwiftUI
 struct AddNoteView: View {
     @Environment(\.dismiss) private var dismiss
     @FocusState private var isEditingNote: Bool
-    @State private var noteColor: Color = .blue
     @State private var didEditNote: Bool = false
-    @State private var newNote: Note = Note()
+    @State private var newNoteTitle: String = ""
+    @State private var newNoteContent: String = ""
+    @State private var newNoteColor: Color = SNStyle.notebookColors.randomElement()!
     
     var body: some View {
         ZStack {
-            SNStyle.noteBackgroundGradient(for: newNote)
+            SNStyle.noteBackgroundGradient(for: newNoteColor)
             .ignoresSafeArea()
             VStack {
                 ZStack {
                     VStack(alignment: .leading, spacing: 0) {
-                        TextField("Note Title", text: $newNote.title)
+                        TextField("Note Title", text: $newNoteTitle)
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundStyle(.primary)
@@ -34,7 +35,7 @@ struct AddNoteView: View {
                                 }
                             }
                         
-                        TextEditor(text: $newNote.content)
+                        TextEditor(text: $newNoteContent)
                             .textEditorStyle(.plain)
                             .focused($isEditingNote)
                             .padding(.horizontal)
@@ -54,7 +55,7 @@ struct AddNoteView: View {
                             dismiss()
                         }
                         
-                        ColorSelectionCapsule(selectedColor: $noteColor)
+                        ColorSelectionCapsule(selectedColor: $newNoteColor)
                         
                         SymbolButton(symbolName: "checkmark.circle.fill") {
                             // save note
