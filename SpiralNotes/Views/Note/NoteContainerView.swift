@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct NoteStack: View {
+struct NoteContainerView: View {
+    
     var body: some View {
         List {
             Section {
@@ -24,13 +25,13 @@ struct NoteStack: View {
             }
             
             Section("Pinned Notebooks") {
-                ForEach(Notebook.mockData) { notebook in
+                ForEach(Array(Notebook.mockData.prefix(4))) { notebook in
                     NavigationLink {
                         NoteListView(notebook: notebook)
                     } label: {
                         HStack {
                             Image(systemName: "text.book.closed.fill")
-                                .foregroundStyle(Color(colorName: notebook.color)!.gradient)
+                                .foregroundStyle(notebook.color.gradient)
                                 .fontWeight(.bold)
                             Text(notebook.subject)
                         }
@@ -41,12 +42,15 @@ struct NoteStack: View {
             Section("Loose notes") {
                 ForEach(Note.mockData) { note in
                     NavigationLink {
-                        NoteView(note: note, notebook: Notebook.mockData.randomElement()!)
+                        NoteView(note: note)
                     } label: {
                         HStack {
                             Image(systemName: "note.text")
-                                .foregroundStyle(.purple.gradient)
-                            Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
+                                .foregroundStyle(.gray.gradient)
+                            // Display note date when no title exists
+                            Text(note.title.isEmpty 
+                                 ? note.dateCreated.formatted(date: .numeric, time: .omitted)
+                                 : note.title)
                             Spacer()
                         }
                     }
@@ -57,5 +61,5 @@ struct NoteStack: View {
 }
 
 #Preview {
-    NoteStack()
+    NoteContainerView()
 }

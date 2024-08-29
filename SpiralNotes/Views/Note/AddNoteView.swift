@@ -9,30 +9,32 @@ import SwiftUI
 
 
 struct AddNoteView: View {
+    var notebook: Notebook? = nil
+    
     @Environment(\.dismiss) private var dismiss
     @FocusState private var isEditingNote: Bool
-    @State private var noteContent: String = ""
-    @State private var noteTitle: String = ""
-    @State private var noteColor: String = "blue"
     @State private var didEditNote: Bool = false
+    @State private var newNoteTitle: String = ""
+    @State private var newNoteContent: String = ""
+    @State private var newNoteColor: Color = SNStyle.notebookColors.randomElement()!
     
     var body: some View {
         ZStack {
-            LinearGradient(
-                colors: [
-                    Color(colorName: noteColor)!.opacity(0.1),
-                    Color(colorName: noteColor)!.opacity(0.1),
-                    Color(colorName: noteColor)!.opacity(0.2),
-                    Color(colorName: noteColor)!.opacity(0.3)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            Group {
+                if let notebook {
+                    SNStyle.noteBackgroundGradient(for: notebook.color)
+                }
+                else {
+                    SNStyle.noteBackgroundGradient(for: newNoteColor)
+                }
+            }
             .ignoresSafeArea()
+            
+            
             VStack {
                 ZStack {
                     VStack(alignment: .leading, spacing: 0) {
-                        TextField("Note Title", text: $noteTitle)
+                        TextField("Note Title", text: $newNoteTitle)
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundStyle(.primary)
@@ -44,7 +46,7 @@ struct AddNoteView: View {
                                 }
                             }
                         
-                        TextEditor(text: $noteContent)
+                        TextEditor(text: $newNoteContent)
                             .textEditorStyle(.plain)
                             .focused($isEditingNote)
                             .padding(.horizontal)
@@ -63,15 +65,17 @@ struct AddNoteView: View {
                         SymbolButton(symbolName: "trash.circle.fill") {
                             dismiss()
                         }
-                        
-                        ColorSelectionCapsule(colorName: $noteColor)
+                        Spacer()
                         
                         SymbolButton(symbolName: "checkmark.circle.fill") {
                             // save note
                         }
                     }
-                    .font(.largeTitle)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .bottom
+                    )
                     .padding(.bottom)
                 }
                 .padding(.horizontal)

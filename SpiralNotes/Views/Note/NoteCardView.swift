@@ -11,7 +11,7 @@ struct NoteCardView: View {
     @Environment(\.colorScheme) var colorScheme
     
     let note: Note
-    let notebook: Notebook
+    let notebookColor: Color
     
     private var textColor: Color {
         if colorScheme == .dark{
@@ -19,22 +19,6 @@ struct NoteCardView: View {
         } else {
             return .white
         }
-    }
-    
-    private var gradient: LinearGradient {
-        let notebookColor = Color(colorName: note.notebook?.color ?? "blue")!
-        
-        let colors: [Color] = [
-            notebookColor.opacity(1.0),
-            notebookColor.opacity(0.0)
-        ]
-        
-        return LinearGradient(
-            colors: colors,
-            startPoint: .top,
-            endPoint: .bottom
-        )
-        
     }
     
     var body: some View {
@@ -48,10 +32,11 @@ struct NoteCardView: View {
             VStack(alignment: .leading, spacing: 0) {
                 // Header
                 HStack {
-                    Text(note.title ?? note.dateCreated.formatted(date: .numeric, time: .omitted))
+                    Text(note.title.isEmpty
+                         ? note.dateCreated.formatted(date: .numeric, time: .omitted)
+                         : note.title)
                         .font(.title3)
                         .fontWeight(.semibold)
-                    
                     
                     Spacer()
                     
@@ -69,11 +54,10 @@ struct NoteCardView: View {
                         ),
                         style: .continuous
                     )
-                    .foregroundStyle(Color(colorName: notebook.color)!.opacity(0.5)
-                    )
+                    .foregroundStyle(notebookColor.opacity(0.5))
                 }
                 
-                Text(note.content ?? "")
+                Text(note.content)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                     .frame(maxWidth: .infinity, minHeight: 120, maxHeight: 200, alignment: .topLeading)
@@ -88,16 +72,7 @@ struct NoteCardView: View {
                             style: .continuous
                         )
                         .foregroundStyle(
-                            LinearGradient(
-                                colors: [
-                                    Color(colorName: notebook.color)!.opacity(0.1),
-                                    Color(colorName: notebook.color)!.opacity(0.1),
-                                    Color(colorName: notebook.color)!.opacity(0.2),
-                                    Color(colorName: notebook.color)!.opacity(0.3)
-                                ],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
+                            SNStyle.noteCardGradient(for:notebookColor)
                         )
                     }
             }
@@ -108,9 +83,9 @@ struct NoteCardView: View {
 
 #Preview {
     VStack {
-        NoteCardView(note: Note.mockData[2], notebook: Notebook.mockData[0])
-        NoteCardView(note: Note.mockData[1], notebook: Notebook.mockData[1])
-        NoteCardView(note: Note.mockData[3], notebook: Notebook.mockData[2])
+        NoteCardView(note: Note.mockData[2], notebookColor: .orange)
+        NoteCardView(note: Note.mockData[1], notebookColor: .orange)
+        NoteCardView(note: Note.mockData[3], notebookColor: .orange)
     }
     .padding()
 }

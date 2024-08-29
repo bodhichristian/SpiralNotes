@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .bottomTrailing) {
+            ZStack {
                 // Header background
                 Rectangle()
                     .foregroundStyle(
@@ -32,10 +32,10 @@ struct HomeView: View {
                     StickyContainerView()
                         .frame(maxHeight: 250)
                     
-                    NoteStack()
+                    NoteContainerView()
                 }
                 
-                NewObjectToolbar(
+                NewItemToolbar(
                     newObjectType: $newItem
                 )
             }
