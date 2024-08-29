@@ -12,26 +12,24 @@ struct ColorSelectionCapsule: View {
     @Environment(\.colorScheme) var colorScheme
     @Namespace private var namespace
     
-    let colors: [Color] = [
-        .red, .yellow, .orange, .green, .blue, .purple
-    ]
+    let colors: [Color]
     
     var body: some View {
         ZStack {
             Capsule()
                 .foregroundStyle(Color.primaryNegative(for: colorScheme))
             HStack {
-                ForEach(0..<6) { i in
+                ForEach(colors, id: \.self) { color in
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)){
-                            selectedColor = colors[i]
+                            selectedColor = color
                         }
                     } label:{
                         ZStack {
                             Circle()
-                                .foregroundStyle(colors[i])
+                                .foregroundStyle(color)
                             
-                            if selectedColor == colors[i] {
+                            if selectedColor == color {
                                 Circle()
                                     .stroke(Color.primary, lineWidth: 2)
                                     .matchedGeometryEffect(id: "selectedColor", in: namespace)
@@ -47,5 +45,5 @@ struct ColorSelectionCapsule: View {
 }
 
 #Preview {
-    ColorSelectionCapsule(selectedColor: .constant(.blue))
+    ColorSelectionCapsule(selectedColor: .constant(.blue), colors: [])
 }

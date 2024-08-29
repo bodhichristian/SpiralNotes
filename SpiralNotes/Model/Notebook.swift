@@ -14,6 +14,7 @@ class Notebook: Identifiable {
     var subject: String
     var color: Color
     var notes: [Note]
+    var pinned: Bool
     
     init(
         id: UUID = UUID(),
@@ -25,18 +26,17 @@ class Notebook: Identifiable {
         self.subject = subject
         self.notes = notes
         self.color = color
+        self.pinned = false
     }
     
     static let mockData: [Notebook] = [
-        Notebook(subject: "Math", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Science", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "History", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Literature", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Art", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Music", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Physical Education", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Computer Science", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Languages", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!),
-        Notebook(subject: "Economics", notes: Note.mockData, color: SNStyle.notebookColors.randomElement()!)
+        Notebook(subject: "Math", notes: Note.mockData, color: .red),
+        Notebook(subject: "Science", notes: Note.mockData, color: .green),
+        Notebook(subject: "History", notes: Note.mockData, color: .yellow),
+        Notebook(subject: "Literature", notes: Note.mockData, color: .blue),
+        Notebook(subject: "Art", notes: Note.mockData, color: .purple),
+        Notebook(subject: "Music", notes: Note.mockData, color: .orange),
+        Notebook(subject: "Computer Science", notes: Note.mockData, color: .red),
+        Notebook(subject: "Economics", notes: Note.mockData, color: .yellow)
     ]
 }

@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct NoteStack: View {
+struct NoteContainerView: View {
+    
     var body: some View {
         List {
             Section {
@@ -24,7 +25,7 @@ struct NoteStack: View {
             }
             
             Section("Pinned Notebooks") {
-                ForEach(Notebook.mockData) { notebook in
+                ForEach(Array(Notebook.mockData.prefix(4))) { notebook in
                     NavigationLink {
                         NoteListView(notebook: notebook)
                     } label: {
@@ -45,7 +46,7 @@ struct NoteStack: View {
                     } label: {
                         HStack {
                             Image(systemName: "note.text")
-                                .foregroundStyle(.purple.gradient)
+                                .foregroundStyle(.gray.gradient)
                             // Display note date when no title exists
                             Text(note.title.isEmpty 
                                  ? note.dateCreated.formatted(date: .numeric, time: .omitted)
@@ -60,5 +61,5 @@ struct NoteStack: View {
 }
 
 #Preview {
-    NoteStack()
+    NoteContainerView()
 }

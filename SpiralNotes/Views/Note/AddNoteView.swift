@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct AddNoteView: View {
+    var notebook: Notebook? = nil
+    
     @Environment(\.dismiss) private var dismiss
     @FocusState private var isEditingNote: Bool
     @State private var didEditNote: Bool = false
@@ -18,8 +20,17 @@ struct AddNoteView: View {
     
     var body: some View {
         ZStack {
-            SNStyle.noteBackgroundGradient(for: newNoteColor)
+            Group {
+                if let notebook {
+                    SNStyle.noteBackgroundGradient(for: notebook.color)
+                }
+                else {
+                    SNStyle.noteBackgroundGradient(for: newNoteColor)
+                }
+            }
             .ignoresSafeArea()
+            
+            
             VStack {
                 ZStack {
                     VStack(alignment: .leading, spacing: 0) {
@@ -54,15 +65,17 @@ struct AddNoteView: View {
                         SymbolButton(symbolName: "trash.circle.fill") {
                             dismiss()
                         }
-                        
-                        ColorSelectionCapsule(selectedColor: $newNoteColor)
+                        Spacer()
                         
                         SymbolButton(symbolName: "checkmark.circle.fill") {
                             // save note
                         }
                     }
-                    .font(.largeTitle)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .bottom
+                    )
                     .padding(.bottom)
                 }
                 .padding(.horizontal)

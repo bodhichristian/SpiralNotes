@@ -77,21 +77,15 @@ struct AddStickyView: View {
                             alignment: .topLeading
                         )
                         .padding()
+                        
+                        
                     }
-                
-                HStack(alignment: .bottom) {
-                    SymbolButton(symbolName: "trash.circle.fill") {
-                        dismiss()
-                    }
-                    
-                    ColorSelectionCapsule(selectedColor: $stickyColor)
-                
-                    SymbolButton(symbolName: "checkmark.circle.fill") {
-                        // Save notebook
-                    }
+                AddItemToolbar(selectedColor: $stickyColor, colorOptions: SNStyle.stickyColors) {
+                    // save item
+                } dismiss: {
+                    dismiss()
                 }
-                .font(.largeTitle)
-                .padding(.bottom)
+                .frame(maxWidth: 300)
             }
             
             if !didEditSticky {

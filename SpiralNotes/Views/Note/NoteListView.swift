@@ -10,14 +10,16 @@ import SwiftUI
 struct NoteListView: View {
     let notebook: Notebook
     
+    @State private var isAddingNote: Bool = false
+    
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 10) {
                 ForEach(notebook.notes){ note in
                     NavigationLink {
-                        NoteView(note: note)
+                        NoteView(notebook: notebook, note: note)
                     }label:{
-                        NoteCardView(note: note)
+                        NoteCardView(note: note, notebookColor: notebook.color)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
@@ -43,12 +45,15 @@ struct NoteListView: View {
             
             ToolbarItem {
                 Button {
-                    // Add new note in current notebook
+                    isAddingNote = true
                 } label: {
                     ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
                 }
                 .buttonStyle(PlainButtonStyle())
             }
+        }
+        .sheet(isPresented: $isAddingNote) {
+            AddNoteView(notebook: notebook)
         }
     }
 }
