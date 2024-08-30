@@ -19,7 +19,7 @@ struct SNStyle {
         .yellow.opacity(0.9),
         .green.opacity(0.9),
         .blue.opacity(0.9),
-        .purple.opacity(0.9)
+        .purple.opacity(0.9),
     ]
     
     static func noteBackgroundGradient(for color: Color) -> LinearGradient {
@@ -33,7 +33,6 @@ struct SNStyle {
             startPoint: .top,
             endPoint: .bottom
         )
-        
     }
     
     static func noteCardGradient(for color: Color) -> LinearGradient {
@@ -45,9 +44,7 @@ struct SNStyle {
         )
     }
     
-    static func noteListBackgroundGradient(for notebook: Notebook) -> LinearGradient {
-        let color = notebook.color
-        
+    static func noteListBackgroundGradient(for color: Color) -> LinearGradient {        
         return LinearGradient(
             colors: [
                 color.opacity(0.1),

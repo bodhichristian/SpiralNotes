@@ -29,7 +29,7 @@ struct NoteListView: View {
         .background {
             Rectangle()
                 .foregroundStyle(
-                    SNStyle.noteListBackgroundGradient(for: notebook))
+                    SNStyle.noteListBackgroundGradient(for: notebook.color))
                 .ignoresSafeArea()
         }
         .navigationTitle(notebook.subject)
@@ -60,6 +60,6 @@ struct NoteListView: View {
 
 #Preview {
     NavigationStack{
-        NoteListView(notebook: Notebook.mockData[1])
+        NoteListView(notebook: Notebook.mockData()[1])
     }
 }

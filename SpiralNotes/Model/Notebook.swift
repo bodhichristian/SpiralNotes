@@ -29,14 +29,29 @@ class Notebook: Identifiable {
         self.pinned = false
     }
     
-    static let mockData: [Notebook] = [
-        Notebook(subject: "Math", notes: Note.mockData, color: .red),
-        Notebook(subject: "Science", notes: Note.mockData, color: .green),
-        Notebook(subject: "History", notes: Note.mockData, color: .yellow),
-        Notebook(subject: "Literature", notes: Note.mockData, color: .blue),
-        Notebook(subject: "Art", notes: Note.mockData, color: .purple),
-        Notebook(subject: "Music", notes: Note.mockData, color: .orange),
-        Notebook(subject: "Computer Science", notes: Note.mockData, color: .red),
-        Notebook(subject: "Economics", notes: Note.mockData, color: .yellow)
-    ]
+    static func mockData() -> [Notebook] {
+        var notebooks: [Notebook] = []
+        let notes = Note.mockData()
+        let subjects = [
+            "Math",
+            "Science",
+            "History",
+            "Literature",
+            "Art",
+            "Music",
+            "Computer Science",
+            "Economics"
+        ]
+        
+        for subject in subjects {
+            notebooks.append(
+                Notebook(
+                    subject: subject,
+                    notes: notes,
+                    color: SNStyle.notebookColors.randomElement()!
+                )
+            )
+        }
+        return notebooks
+    }
 }

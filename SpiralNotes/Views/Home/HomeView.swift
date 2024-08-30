@@ -14,19 +14,15 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Header background
-                Rectangle()
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [
-                                .yellow.opacity(0.1),
-                                .yellow
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                    .ignoresSafeArea()
+                LinearGradient(
+                    colors: [
+                        .yellow.opacity(0.1),
+                        .yellow
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
                 
                 VStack {
                     StickyContainerView()

@@ -17,7 +17,7 @@ struct ColorSelectionCapsule: View {
     var body: some View {
         ZStack {
             Capsule()
-                .foregroundStyle(Color.primaryNegative(for: colorScheme))
+                .foregroundStyle(Color.invertedPrimary(for: colorScheme))
             HStack {
                 ForEach(colors, id: \.self) { color in
                     Button {

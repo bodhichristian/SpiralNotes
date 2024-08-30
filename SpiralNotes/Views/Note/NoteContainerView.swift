@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NoteContainerView: View {
+    let pinnedNotebooks = Array(Notebook.mockData().prefix(4))
     
     var body: some View {
         List {
@@ -25,7 +26,7 @@ struct NoteContainerView: View {
             }
             
             Section("Pinned Notebooks") {
-                ForEach(Array(Notebook.mockData.prefix(4))) { notebook in
+                ForEach(pinnedNotebooks) { notebook in
                     NavigationLink {
                         NoteListView(notebook: notebook)
                     } label: {
