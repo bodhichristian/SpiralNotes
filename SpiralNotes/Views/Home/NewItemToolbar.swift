@@ -15,7 +15,7 @@ struct NewItemToolbar: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             Rectangle()
-                .foregroundStyle(Color.primaryNegative(for: colorScheme).gradient)
+                .foregroundStyle(Color.invertedPrimary(for: colorScheme).gradient)
                 .ignoresSafeArea()
                 .frame(maxHeight: .infinity)
                 .opacity(expanded ? 0.8 : 0.0)

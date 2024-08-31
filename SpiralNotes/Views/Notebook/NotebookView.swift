@@ -20,5 +20,5 @@ struct NotebookView: View {
 }
 
 #Preview {
-    NotebookView(notebook: Notebook.mockData[0])
+    NotebookView(notebook: Notebook.mockData()[0])
 }

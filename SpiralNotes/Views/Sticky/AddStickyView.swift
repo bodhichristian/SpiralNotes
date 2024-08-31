@@ -80,6 +80,7 @@ struct AddStickyView: View {
                         
                         
                     }
+                
                 AddItemToolbar(selectedColor: $stickyColor, colorOptions: SNStyle.stickyColors) {
                     // save item
                 } dismiss: {

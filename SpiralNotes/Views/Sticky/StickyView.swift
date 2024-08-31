@@ -48,5 +48,5 @@ struct StickyView: View {
 }
 
 #Preview {
-    StickyView(sticky: Sticky.mockData[0])
+    StickyView(sticky: Sticky.mockData()[0])
 }

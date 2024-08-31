@@ -44,5 +44,5 @@ struct StickyPreview: View {
 }
 
 #Preview {
-    StickyPreview(sticky: Sticky(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua.", color: .yellow))
+    StickyPreview(sticky: Sticky.mockData()[0])
 }

@@ -20,7 +20,7 @@ struct SymbolButton: View {
             Image(systemName: symbolName)
                 .symbolRenderingMode(.palette)
                 .font(.largeTitle)
-                .foregroundStyle(.primary, Color.primaryNegative(for: colorScheme))
+                .foregroundStyle(.primary, Color.invertedPrimary(for: colorScheme))
         }
         .buttonStyle(PlainButtonStyle())
     }

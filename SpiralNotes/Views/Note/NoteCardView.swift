@@ -35,8 +35,8 @@ struct NoteCardView: View {
                     Text(note.title.isEmpty
                          ? note.dateCreated.formatted(date: .numeric, time: .omitted)
                          : note.title)
-                        .font(.title3)
-                        .fontWeight(.semibold)
+                    .font(.title3)
+                    .fontWeight(.semibold)
                     
                     Spacer()
                     
@@ -60,7 +60,12 @@ struct NoteCardView: View {
                 Text(note.content)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
-                    .frame(maxWidth: .infinity, minHeight: 120, maxHeight: 200, alignment: .topLeading)
+                    .frame(
+                        maxWidth: .infinity,
+                        minHeight: 120,
+                        maxHeight: 200,
+                        alignment: .topLeading
+                    )
                     .background {
                         UnevenRoundedRectangle(
                             cornerRadii: RectangleCornerRadii(
@@ -83,9 +88,9 @@ struct NoteCardView: View {
 
 #Preview {
     VStack {
-        NoteCardView(note: Note.mockData[2], notebookColor: .orange)
-        NoteCardView(note: Note.mockData[1], notebookColor: .orange)
-        NoteCardView(note: Note.mockData[3], notebookColor: .orange)
+        NoteCardView(note: Note.mockData()[2], notebookColor: .orange)
+        NoteCardView(note: Note.mockData()[1], notebookColor: .orange)
+        NoteCardView(note: Note.mockData()[3], notebookColor: .orange)
     }
     .padding()
 }

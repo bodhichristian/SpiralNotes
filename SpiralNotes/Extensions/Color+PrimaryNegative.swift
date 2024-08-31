@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static func primaryNegative(for colorScheme: ColorScheme) -> Color {
+    static func invertedPrimary(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .dark:
             return .black
