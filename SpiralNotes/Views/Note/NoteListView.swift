@@ -10,14 +10,16 @@ import SwiftUI
 struct NoteListView: View {
     let notebook: Notebook
     
+    @State private var isAddingNote: Bool = false
+    
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 10) {
-                ForEach(notebook.notes){ note in
+                ForEach(notebook.notes) { note in
                     NavigationLink {
-                        NoteView(note: note, notebook: notebook)
-                    }label:{
-                        NoteCardView(note: note, notebook: notebook)
+                        NoteView(notebook: notebook, note: note)
+                    } label: {
+                        NoteCardView(note: note, notebookColor: notebook.color)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
@@ -27,17 +29,7 @@ struct NoteListView: View {
         .background {
             Rectangle()
                 .foregroundStyle(
-                    LinearGradient(
-                        colors: [
-                            Color(colorName: notebook.color)!.opacity(0.1),
-                            Color(colorName: notebook.color)!.opacity(0.1),
-                            Color(colorName: notebook.color)!.opacity(0.4),
-                            Color(colorName: notebook.color)!.opacity(0.8)
-                        ],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
+                    SNStyle.noteListBackgroundGradient(for: notebook.color))
                 .ignoresSafeArea()
         }
         .navigationTitle(notebook.subject)
@@ -53,18 +45,21 @@ struct NoteListView: View {
             
             ToolbarItem {
                 Button {
-                    // Add new note in current notebook
+                    isAddingNote = true
                 } label: {
                     ToolbarButtonLabel(text: "Add", symbol: "plus.circle")
                 }
                 .buttonStyle(PlainButtonStyle())
             }
         }
+        .sheet(isPresented: $isAddingNote) {
+            AddNoteView(notebook: notebook)
+        }
     }
 }
 
 #Preview {
     NavigationStack{
-        NoteListView(notebook: Notebook.mockData[1])
+        NoteListView(notebook: Notebook.mockData()[1])
     }
 }

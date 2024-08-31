@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewObjectToolbar: View {
+struct NewItemToolbar: View {
     @Binding var newObjectType: NewItem?
     @Environment(\.colorScheme) var colorScheme
     @State private var expanded: Bool = false
@@ -15,7 +15,7 @@ struct NewObjectToolbar: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             Rectangle()
-                .foregroundStyle(Color.primaryNegative(for: colorScheme).gradient)
+                .foregroundStyle(Color.invertedPrimary(for: colorScheme).gradient)
                 .ignoresSafeArea()
                 .frame(maxHeight: .infinity)
                 .opacity(expanded ? 0.8 : 0.0)
@@ -121,7 +121,7 @@ struct NewObjectToolbar: View {
 }
 
 #Preview {
-    NewObjectToolbar(
+    NewItemToolbar(
         newObjectType: .constant(.note)
     )
 }

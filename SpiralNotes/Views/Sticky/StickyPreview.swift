@@ -12,7 +12,7 @@ struct StickyPreview: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .foregroundStyle(.yellow.gradient)
+            .foregroundStyle(sticky.color.gradient)
             .frame(maxWidth: 320, maxHeight: 320)
             .shadow(radius: 4, y: 4)
             .overlay {
@@ -44,5 +44,5 @@ struct StickyPreview: View {
 }
 
 #Preview {
-    StickyPreview(sticky: Sticky(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua."))
+    StickyPreview(sticky: Sticky.mockData()[0])
 }

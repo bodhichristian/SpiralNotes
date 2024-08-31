@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class Sticky: Identifiable {
@@ -13,14 +14,14 @@ class Sticky: Identifiable {
     var dateCreated: Date
     var title: String
     var content: String
-    var color: String
+    var color: Color
     
     init(
         id: UUID = UUID(),
-        dateCreated: Foundation.Date = Date.now,
+        dateCreated: Date = Date.now,
         title: String = "",
         content: String,
-        color: String = "yellow"
+        color: Color
     ) {
         self.id = id
         self.dateCreated = dateCreated
@@ -29,12 +30,14 @@ class Sticky: Identifiable {
         self.color = color
     }
     
-    static let mockData: [Sticky] = [
-        Sticky(title: "Health", content: "Go to the gym"),
-        Sticky(title: "Food", content: "Groceries"),
-        Sticky(title: "School", content: "Sign permission slip"),
-        Sticky(title: "Family", content: "Write mom a letter"),
-        Sticky(title: "Family", content: "Birthday gift for Janice"),
-        Sticky(title: "Tasks", content: "Remember this later.")
-    ]
+    static func mockData() -> [Sticky] {
+       return [
+            Sticky(title: "Health", content: "Go to the gym", color: .yellow),
+            Sticky(title: "Food", content: "Groceries", color: .orange),
+            Sticky(title: "School", content: "Sign permission slip", color: .pink),
+            Sticky(title: "Family", content: "Write mom a letter", color: .green),
+            Sticky(title: "Family", content: "Birthday gift for Janice", color: .yellow),
+            Sticky(title: "Tasks", content: "Remember this later.", color: .blue)
+        ]
+    }
 }

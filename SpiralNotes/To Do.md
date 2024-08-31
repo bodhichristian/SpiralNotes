@@ -4,13 +4,10 @@
 
 # Prototype UI
 ## Screens:
-[x] AddNoteView
-[x] AddStickyView
+[ ] update screens to fit new note model with color param
 
 ## Interactions:
-[x] 'Add' menu
-[x] Sticky previews 
-[x] StickyView text editor
+
 
 # Adopt SwiftData
 [ ] Adopt use of @Model macro

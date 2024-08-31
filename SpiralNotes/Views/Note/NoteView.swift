@@ -9,24 +9,22 @@ import SwiftUI
 
 
 struct NoteView: View {
-    let note: Note
-    let notebook: Notebook
+    var notebook: Notebook? = nil
     
+    @Bindable var note: Note
     @FocusState private var isEditingNote: Bool
     @State private var noteContent: String = ""
     
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            LinearGradient(
-                colors: [
-                    Color(colorName: notebook.color)!.opacity(0.1),
-                    Color(colorName: notebook.color)!.opacity(0.1),
-                    Color(colorName: notebook.color)!.opacity(0.2),
-                    Color(colorName: notebook.color)!.opacity(0.3)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+        ZStack {
+            
+            Group {
+                if let notebook {
+                    SNStyle.noteBackgroundGradient(for: notebook.color)
+                } else {
+                    SNStyle.noteBackgroundGradient(for: note.color)
+                }
+            }
             .ignoresSafeArea()
             
             // Note Contents
@@ -36,16 +34,20 @@ struct NoteView: View {
                         .font(.caption)
                         .fontWeight(.semibold)
                         .foregroundStyle(.secondary)
-                        .padding(.leading)
                         
-                    TextEditor(text: $noteContent)
-                        .onAppear {
-                            noteContent = note.content ?? ""
-                        }
-                        .textEditorStyle(.plain)
-                        .focused($isEditingNote)                    
-                        .padding()
+                    Text(note.content)
+                        .multilineTextAlignment(.leading)
+                        .padding(.top, 20)
+                    
+                    // MARK: TextEditor will be used when SwiftData is implemented
+                    // for tutorial part 1 purposes, objects will not be manipulated
+//                    TextEditor(text: $note.content)
+//                        .textEditorStyle(.plain)
+//                        .focused($isEditingNote)
+//                        .padding()
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
             }
             
             Button {
@@ -67,8 +69,9 @@ struct NoteView: View {
                     }
             }
             .buttonStyle(PlainButtonStyle())
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
-        .navigationTitle(note.title ?? "")
+        .navigationTitle(note.title)
         .toolbar {
             ToolbarItem {
                 Button {
@@ -84,6 +87,6 @@ struct NoteView: View {
 
 #Preview {
     NavigationStack {
-        NoteView(note: Note.mockData[0], notebook: Notebook.mockData[3])
+        NoteView(note: Note.mockData()[1])
     }
 }

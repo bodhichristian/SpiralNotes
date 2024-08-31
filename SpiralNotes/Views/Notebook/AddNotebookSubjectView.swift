@@ -31,7 +31,7 @@ struct AddNotebookSubjectView: View {
 
 #Preview {
     ZStack {
-        NotebookShape(colorName: "blue")
+        NotebookShape(color: .blue)
         AddNotebookSubjectView(subject: .constant("History"))
     }
 }

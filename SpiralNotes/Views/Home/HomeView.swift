@@ -13,29 +13,25 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .bottomTrailing) {
-                // Header background
-                Rectangle()
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [
-                                .yellow.opacity(0.1),
-                                .yellow
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                    .ignoresSafeArea()
+            ZStack {
+                LinearGradient(
+                    colors: [
+                        .yellow.opacity(0.1),
+                        .yellow
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
                 
                 VStack {
                     StickyContainerView()
                         .frame(maxHeight: 250)
                     
-                    NoteStack()
+                    NoteContainerView()
                 }
                 
-                NewObjectToolbar(
+                NewItemToolbar(
                     newObjectType: $newItem
                 )
             }

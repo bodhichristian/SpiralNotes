@@ -13,7 +13,7 @@ struct StickyView: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .foregroundStyle(Color(colorName: sticky.color)!.gradient)
+            .foregroundStyle(sticky.color.gradient)
             .frame(maxWidth: 320, maxHeight: 320)
             .shadow(radius: 4, y: 4)
             .overlay {
@@ -36,23 +36,6 @@ struct StickyView: View {
                         .foregroundStyle(.black)
                         .padding(-4)
                         .focused($isEditingContent)
-                        .overlay {
-                            if isEditingContent {
-                                HStack(alignment: .bottom) {
-                                    SymbolButton(symbolName: "trash.circle.fill") {
-                                        // delete sticky
-                                    }
-                                    
-                                    ColorSelectionCapsule(colorName: $sticky.color)
-                                    
-                                    SymbolButton(symbolName: "checkmark.circle.fill") {
-                                        
-                                    }
-                                }
-                                .font(.largeTitle)
-                                .frame(maxHeight: .infinity, alignment: .bottom)
-                            }
-                        }
                 }
                 .frame(
                     maxWidth: .infinity,
@@ -65,5 +48,5 @@ struct StickyView: View {
 }
 
 #Preview {
-    StickyView(sticky: Sticky.mockData[0])
+    StickyView(sticky: Sticky.mockData()[0])
 }

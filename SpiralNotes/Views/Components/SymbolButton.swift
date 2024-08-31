@@ -19,7 +19,8 @@ struct SymbolButton: View {
         } label: {
             Image(systemName: symbolName)
                 .symbolRenderingMode(.palette)
-                .foregroundStyle(.primary, Color.primaryNegative(for: colorScheme))
+                .font(.largeTitle)
+                .foregroundStyle(.primary, Color.invertedPrimary(for: colorScheme))
         }
         .buttonStyle(PlainButtonStyle())
     }
