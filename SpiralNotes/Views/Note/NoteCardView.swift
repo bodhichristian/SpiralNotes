@@ -83,9 +83,9 @@ struct NoteCardView: View {
 
 #Preview {
     VStack {
-        NoteCardView(note: Note.mockData[2], notebookColor: .orange)
-        NoteCardView(note: Note.mockData[1], notebookColor: .orange)
-        NoteCardView(note: Note.mockData[3], notebookColor: .orange)
+        NoteCardView(note: Note.mockData()[2], notebookColor: .orange)
+        NoteCardView(note: Note.mockData()[1], notebookColor: .orange)
+        NoteCardView(note: Note.mockData()[3], notebookColor: .orange)
     }
     .padding()
 }

@@ -41,7 +41,7 @@ struct NoteContainerView: View {
             }
             
             Section("Loose notes") {
-                ForEach(Note.mockData) { note in
+                ForEach(Note.mockData()) { note in
                     NavigationLink {
                         NoteView(note: note)
                     } label: {

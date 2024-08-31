@@ -87,6 +87,6 @@ struct NoteView: View {
 
 #Preview {
     NavigationStack {
-        NoteView(note: Note.mockData[1])
+        NoteView(note: Note.mockData()[1])
     }
 }

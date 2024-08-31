@@ -11,7 +11,7 @@ struct StickyContainerView: View {
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(Sticky.mockData) { sticky in
+                ForEach(Sticky.mockData()) { sticky in
                     NavigationLink {
                         StickyView(sticky: sticky)
                     } label: {
