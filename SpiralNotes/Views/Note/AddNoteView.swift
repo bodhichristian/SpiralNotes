@@ -30,56 +30,50 @@ struct AddNoteView: View {
             }
             .ignoresSafeArea()
             
-            
-            VStack {
-                ZStack {
-                    VStack(alignment: .leading, spacing: 0) {
-                        TextField("Note Title", text: $newNoteTitle)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.primary)
-                            .padding(.leading)
-                            .padding(.top, 40)
-                            .onTapGesture {
-                                withAnimation {
-                                    didEditNote = true
-                                }
-                            }
-                        
-                        TextEditor(text: $newNoteContent)
-                            .textEditorStyle(.plain)
-                            .focused($isEditingNote)
-                            .padding(.horizontal)
-                            .onAppear {
-                                isEditingNote = true
-                            }
-                            .onTapGesture {
-                                withAnimation {
-                                    didEditNote = true
-                                }
-                            }
-                    }
-                    .frame(maxHeight: .infinity, alignment: .top)
-                    
-                    HStack(alignment: .bottom) {
-                        SymbolButton(symbolName: "trash.circle.fill") {
-                            dismiss()
-                        }
-                        Spacer()
-                        
-                        SymbolButton(symbolName: "checkmark.circle.fill") {
-                            // save note
+            VStack(alignment: .leading, spacing: 0) {
+                TextField("Note Title", text: $newNoteTitle)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.primary)
+                    .padding(.leading)
+                    .padding(.top, 40)
+                    .onTapGesture {
+                        withAnimation {
+                            didEditNote = true
                         }
                     }
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity,
-                        alignment: .bottom
-                    )
-                    .padding(.bottom)
-                }
-                .padding(.horizontal)
+                
+                TextEditor(text: $newNoteContent)
+                    .textEditorStyle(.plain)
+                    .focused($isEditingNote)
+                    .padding(.horizontal)
+                    .onAppear {
+                        isEditingNote = true
+                    }
+                    .onTapGesture {
+                        withAnimation {
+                            didEditNote = true
+                        }
+                    }
             }
+            .frame(maxHeight: .infinity, alignment: .top)
+            
+            HStack(alignment: .bottom) {
+                SymbolButton(symbolName: "trash.circle.fill") {
+                    dismiss()
+                }
+                Spacer()
+                
+                SymbolButton(symbolName: "checkmark.circle.fill") {
+                    // save note
+                }
+            }
+            .frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity,
+                alignment: .bottom
+            )
+            .padding()
         }
     }
 }

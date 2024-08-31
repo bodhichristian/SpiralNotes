@@ -48,12 +48,13 @@ struct NoteContainerView: View {
                         HStack {
                             Image(systemName: "note.text")
                                 .foregroundStyle(.gray.gradient)
-                            // Display note date when no title exists
-                            Text(note.title.isEmpty 
+                            
+                            Text(note.title.isEmpty // Display note date when no title exists
                                  ? note.dateCreated.formatted(date: .numeric, time: .omitted)
                                  : note.title)
-                            Spacer()
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .lineLimit(1)
                     }
                 }
             }

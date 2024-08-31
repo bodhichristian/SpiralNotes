@@ -28,7 +28,6 @@ struct AddItemToolbar: View {
             }
         }
         .font(.largeTitle)
-        //.frame(maxHeight: .infinity, alignment: .bottom)
         .padding()
     }
 }
@@ -38,7 +37,7 @@ struct AddItemToolbar: View {
         selectedColor: .constant(.blue),
         colorOptions: []
     ) {
-        // dismiss
+        // save
     } dismiss: {
         // dismiss
     }

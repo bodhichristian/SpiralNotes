@@ -15,10 +15,10 @@ struct NoteListView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 10) {
-                ForEach(notebook.notes){ note in
+                ForEach(notebook.notes) { note in
                     NavigationLink {
                         NoteView(notebook: notebook, note: note)
-                    }label:{
+                    } label: {
                         NoteCardView(note: note, notebookColor: notebook.color)
                     }
                     .buttonStyle(PlainButtonStyle())

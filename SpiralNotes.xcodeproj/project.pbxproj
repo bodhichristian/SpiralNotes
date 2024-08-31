@@ -134,11 +134,11 @@
 		AA6C378A2C725DC100335B42 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				AABCD3182C7789FD0007591F /* SymbolButton.swift */,
-				AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */,
-				AAC1B3CC2C72A8BA0002F230 /* ToolbarButtonLabel.swift */,
 				AAD3B3F62C80C85B00045B26 /* AddItemToolbar.swift */,
 				AABCD3162C76CF790007591F /* ColorSelectionCapsule.swift */,
+				AAF83FB32C741B5200BFB970 /* SortButtonLabel.swift */,
+				AABCD3182C7789FD0007591F /* SymbolButton.swift */,
+				AAC1B3CC2C72A8BA0002F230 /* ToolbarButtonLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -146,12 +146,12 @@
 		AA6C378D2C7275F200335B42 /* Notebook */ = {
 			isa = PBXGroup;
 			children = (
-				AA6C378E2C72760100335B42 /* NotebookShape.swift */,
-				AA4880D32C767F0900FEF610 /* NotebookView.swift */,
-				AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */,
-				AA6C37902C72841E00335B42 /* NotebookListView.swift */,
 				AA4880CF2C76606900FEF610 /* AddNotebookView.swift */,
 				AA4880D52C76BC9800FEF610 /* AddNotebookSubjectView.swift */,
+				AA6C378E2C72760100335B42 /* NotebookShape.swift */,
+				AA4880D12C7663BD00FEF610 /* NotebookSubjectView.swift */,
+				AA6C37902C72841E00335B42 /* NotebookListView.swift */,
+				AA4880D32C767F0900FEF610 /* NotebookView.swift */,
 			);
 			path = Notebook;
 			sourceTree = "<group>";
