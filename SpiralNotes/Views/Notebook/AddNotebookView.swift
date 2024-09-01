@@ -46,7 +46,6 @@ struct AddNotebookView: View {
                 Text("Choose a \(Text("color").foregroundStyle(selectedColor)) that fits")
                     .font(.title3)
                     .fontWeight(.medium)
-                
             }
         }
     }
