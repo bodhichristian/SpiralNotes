@@ -58,6 +58,7 @@ struct NoteCardView: View {
                 }
                 
                 Text(note.content)
+                    .lineLimit(5)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                     .frame(
@@ -82,7 +83,7 @@ struct NoteCardView: View {
                     }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 200, alignment: .topLeading)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 }
 
