@@ -1,15 +1,42 @@
 
+# SpiralNotes - Prototype 
 
-# To Do - SpiralNotes 
+## Segment 0 - Project Setup
+[ ] Introduction
+[ ] App Overview
+[ ] Project Setup
 
-# Prototype UI
-## Screens:
-[ ] update screens to fit new note model with color param
+## Segment 1 - Sticky & HomeView
+[ ] Model Sticky Note
+[ ] StickyView
+[ ] StickyContainerView
+[ ] HomeView
 
-## Interactions:
+## Segment 2 - Notebook
+[ ] Model Notebook
+[ ] NotebookShape, NotebookView
+[ ] NotebookListView
+[ ] NoteContainerView
+
+## Segment 3 - Note
+[ ] Model Note
+[ ] NoteCardView
+[ ] NoteListView
+[ ] NoteView
+
+## Segment 4 - Interactivity
+[ ] AddNotebookView
+[ ] AddNoteView
+[ ] Toolbar buttons
+[ ] AddItemToolbar
 
 
-# Adopt SwiftData
+
+
+
+# Go Further
+
+## Adopt SwiftData
 [ ] Adopt use of @Model macro
 [ ] Import SwiftData to views
 

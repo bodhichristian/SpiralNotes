@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct StickyContainerView: View {
+    let stickies: [Sticky] = Sticky.mockData()
+    
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(Sticky.mockData()) { sticky in
+                ForEach(stickies, id: \.id) { sticky in
                     NavigationLink {
                         StickyView(sticky: sticky)
                     } label: {
@@ -20,9 +22,11 @@ struct StickyContainerView: View {
                                 .frame(width: 200, height: 200)
                                 .padding(6)
                             
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 3, height: 66)
-                                .padding(.horizontal, 8)
+                            if sticky.id != stickies.last!.id {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(width: 3, height: 66)
+                                    .padding(.horizontal, 8)
+                            }
                         }
                         .padding(.vertical)
                         .offset(x: 14)
@@ -30,6 +34,7 @@ struct StickyContainerView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
             }
+            .padding(.trailing, 28)
         }
     }
 }
