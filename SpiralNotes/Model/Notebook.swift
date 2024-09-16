@@ -55,3 +55,16 @@ class Notebook: Identifiable {
         return notebooks
     }
 }
+
+
+
+
+let n: [Notebook] = [
+    Notebook(subject: "History", color: .red),
+    Notebook(subject: "Math", color: .blue),
+    Notebook(subject: "Literature", color: .yellow),
+    Notebook(subject: "Science", color: .green),
+    Notebook(subject: "Economics", color: .orange),
+    Notebook(subject: "Computer Science", color: .purple),
+    
+]

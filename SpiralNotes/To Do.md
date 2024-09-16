@@ -12,17 +12,18 @@
 [ ] StickyContainerView
 [ ] HomeView
 
-## Segment 2 - Notebook
+## Segment 2 - Note
 [ ] Model Notebook
+[ ] Model Note
+[ ] NoteView
+[ ] SNStyle
+
+## Segment 3 - Notebook
 [ ] NotebookShape, NotebookView
 [ ] NotebookListView
-[ ] NoteContainerView
-
-## Segment 3 - Note
-[ ] Model Note
 [ ] NoteCardView
 [ ] NoteListView
-[ ] NoteView
+[ ] NoteContainerView
 
 ## Segment 4 - Interactivity
 [ ] AddNotebookView

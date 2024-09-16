@@ -13,7 +13,7 @@ struct StickyContainerView: View {
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(stickies, id: \.id) { sticky in
+                ForEach(stickies) { sticky in
                     NavigationLink {
                         StickyView(sticky: sticky)
                     } label: {
